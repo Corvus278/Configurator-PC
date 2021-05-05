@@ -1,6 +1,8 @@
 class Motherboard:
-    def __init__(self, name, img, price_min, price_max, form, chipset, proc_list, pins, m2_count, m2_interface,
-                 sata_count, fan_connector_type, fan_connector_count, ddr, ram_frequency, ram_gb_count, ram_count,
+    def __init__(self, name, img, price_min, price_max, form, chipset,
+                 proc_list, pins, m2_count, m2_interface,
+                 sata_count, fan_connector_type, fan_connector_count, ddr,
+                 ram_frequency, ram_gb_count, ram_count,
                  ram_form='DIMM'):
         self.name = name
         self.img = img
@@ -44,7 +46,8 @@ class GPU:
 
 
 class PowerSupply:
-    def __init__(self, name, img, price_min, price_max, form, connectors_pci_e_8__count, connectors_sata_count):
+    def __init__(self, name, img, price_min, price_max, form,
+                 connectors_pci_e_8__count, connectors_sata_count):
         self.name = name
         self.img = img
         self.price_min = price_min
@@ -55,8 +58,10 @@ class PowerSupply:
 
 
 class Case:
-    def __init__(self, name, img, price_min, price_max, form_motherboard, power_supply, form__power_supply,
-                 gpu_length_max, sata__2_5__count, sata__3_5__count, fans_front, fans_top, fans_back):
+    def __init__(self, name, img, price_min, price_max, form_motherboard,
+                 power_supply, form__power_supply,
+                 gpu_length_max, sata__2_5__count, sata__3_5__count, fans_front,
+                 fans_top, fans_back):
         self.name = name
         self.img = img
         self.price_min = price_min
@@ -73,7 +78,8 @@ class Case:
 
 
 class Storage:
-    def __init__(self, name, img, price_min, price_max, form, sata_form='', m2_form=''):
+    def __init__(self, name, img, price_min, price_max, form, sata_form='',
+                 m2_form=''):
         self.name = name
         self.img = img
         self.price_min = price_min
