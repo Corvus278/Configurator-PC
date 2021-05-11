@@ -1,11 +1,12 @@
 class Motherboard:
-    def __init__(self, name, img, price_min, price_max, form, chipset,
+    def __init__(self, name, img, url, price_min, price_max, form, socket,
                  proc_list, pins, m2_count, m2_interface,
-                 sata_count, fan_connector_type, fan_connector_count, ddr,
+                 sata_count, fan_connector_count, ddr,
                  ram_frequency, ram_gb_count, ram_count,
                  ram_form='DIMM'):
         self.name = name
         self.img = img
+        self.url = url
         self.price_min = price_min
         self.price_max = price_max
         self.form = form
@@ -15,7 +16,7 @@ class Motherboard:
         self.m2_count = m2_count
         self.m2_interface = m2_interface
         self.stata_count = sata_count
-        self.fan_connector_type = fan_connector_type
+        # self.fan_connector_type = fan_connector_type
         self.fan_connector_count = fan_connector_count
         self.ram_form = ram_form
         self.ddr = ddr
@@ -25,19 +26,24 @@ class Motherboard:
 
 
 class CPU:
-    def __init__(self, name, img, price_min, price_max, socket, generation):
+    def __init__(self, name, img, url, price_min, price_max, socket, line,
+                 generation):
         self.name = name
         self.img = img
+        self.url = url
         self.price_min = price_min
         self.price_max = price_max
         self.socket = socket
+        self.line = line
         self.generation = generation
 
 
 class GPU:
-    def __init__(self, name, img, price_min, price_max, slot, pins, length):
+    def __init__(self, name, img, url, price_min, price_max, slot, pins,
+                 length):
         self.name = name
         self.img = img
+        self.url = url
         self.price_min = price_min
         self.price_max = price_max
         self.slot = slot
@@ -46,10 +52,11 @@ class GPU:
 
 
 class PowerSupply:
-    def __init__(self, name, img, price_min, price_max, form,
+    def __init__(self, name, img, url, price_min, price_max, form,
                  connectors_pci_e_8__count, connectors_sata_count):
         self.name = name
         self.img = img
+        self.url = url
         self.price_min = price_min
         self.price_max = price_max
         self.form = form
@@ -58,12 +65,13 @@ class PowerSupply:
 
 
 class Case:
-    def __init__(self, name, img, price_min, price_max, form_motherboard,
+    def __init__(self, name, img, url, price_min, price_max, form_motherboard,
                  power_supply, form__power_supply,
                  gpu_length_max, sata__2_5__count, sata__3_5__count, fans_front,
                  fans_top, fans_back):
         self.name = name
         self.img = img
+        self.url = url
         self.price_min = price_min
         self.price_max = price_max
         self.form_motherboard = form_motherboard
@@ -78,10 +86,11 @@ class Case:
 
 
 class Storage:
-    def __init__(self, name, img, price_min, price_max, form, sata_form='',
+    def __init__(self, name, img, url, price_min, price_max, form, sata_form='',
                  m2_form=''):
         self.name = name
         self.img = img
+        self.url = url
         self.price_min = price_min
         self.price_max = price_max
         self.form = form
@@ -90,9 +99,11 @@ class Storage:
 
 
 class Cooler:
-    def __init__(self, name, img, price_min, price_max, sockets, height, width):
+    def __init__(self, name, img, url, price_min, price_max, sockets, height,
+                 width):
         self.name = name
         self.img = img
+        self.url = url
         self.price_min = price_min
         self.price_max = price_max
         self.sockets = sockets
@@ -101,18 +112,20 @@ class Cooler:
 
 
 class WCS:
-    def __init__(self, name, img, price_min, price_max, sockets):
+    def __init__(self, name, img, url, price_min, price_max, sockets):
         self.name = name
         self.img = img
+        self.url = url
         self.price_min = price_min
         self.price_max = price_max
         self.sockets = sockets
 
 
 class Fan:
-    def __init__(self, name, img, price_min, price_max, weight, count='1'):
+    def __init__(self, name, img, url, price_min, price_max, weight, count='1'):
         self.name = name
         self.img = img
+        self.url = url
         self.price_min = price_min
         self.price_max = price_max
         self.weight = weight
