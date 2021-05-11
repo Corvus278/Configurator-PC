@@ -97,6 +97,20 @@ class Storage:
         self.sata_form = sata_form
         self.m2_form = m2_form
 
+class RAM:
+    def __init__(self, name, img, url, price_min, price_max, die_count, ddr,
+                 all_volume, frequency, form='DIMM'):
+        self.name = name
+        self.img = img
+        self.url = url
+        self.price_min = price_min
+        self.price_max = price_max
+        self.die_count = die_count
+        self.ddr = ddr
+        self.all_volume = all_volume
+        self.frequency = frequency
+        self.form = form
+
 
 class Cooler:
     def __init__(self, name, img, url, price_min, price_max, sockets, height,

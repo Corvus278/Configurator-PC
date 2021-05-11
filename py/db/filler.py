@@ -205,5 +205,50 @@ def main():
                     '108285', 'PCI-E v4.0', '8', '300'))
     ]
 
+    # Создаём ram
+    ram = [
+           (pc.RAM('HyperX HX436C17FB3AK2/16',
+                   'https://www.e-katalog.ru/jpg/1638285.jpg',
+                   'https://www.e-katalog.ru/HYPERX-HX436C17FB3AK2-16.htm',
+                   '9438', '10980', '2', '4', '16', '3600')),
+           (pc.RAM('Corsair CMW16GX4M2C3600C18',
+                   'https://www.e-katalog.ru/jpg/1374369.jpg',
+                   'https://www.e-katalog.ru/CORSAIR-CMW16GX4M2C3600C18.htm',
+                   '10890', '12448', '2', '4', '16', '3600')),
+           (pc.RAM('G.Skill F4-3600C18D-16GTZR',
+                   'https://www.e-katalog.ru/jpg/1132031.jpg',
+                   'https://www.e-katalog.ru/G-SKILL-F4-3600C18D-16GTZR.htm',
+                   '11610', '12560', '2', '4', '16', '3600')),
+           (pc.RAM('HyperX Fury Black DDR4 2x8Gb',
+                   'https://www.e-katalog.ru/jpg/1663620.jpg',
+                   'https://www.e-katalog.ru/HYPERX-HX437C19FB3K2-16.htm',
+                   '8789', '10330', '2', '4', '16', '3733')),
+           (pc.RAM('Kingston KVR ValueRAM DDR4 1x8Gb',
+                   'https://www.e-katalog.ru/jpg/1686416.jpg',
+                   'https://www.e-katalog.ru/KINGSTON-KVR29N21S8-8.htm',
+                   '3609', '4433', '1', '4', '8', '2933')),
+           (pc.RAM('Patriot Signature DDR4 1x8Gb',
+                   'https://www.e-katalog.ru/jpg/1107298.jpg',
+                   'https://www.e-katalog.ru/PATRIOT-PSD48G240082.htm',
+                   '3370', '4133', '1', '4', '8', '2400')),
+           (pc.RAM('Samsung DDR4 1x8Gb',
+                   'https://www.e-katalog.ru/jpg/589635.jpg',
+                   'https://www.e-katalog.ru/SAMSUNG-M378A1G43DB0-CPB.htm',
+                   '3300', '', '1', '4', '8', '2133')),
+           (pc.RAM('Corsair Vengeance RGB Pro DDR4 2x16Gb',
+                   'https://www.e-katalog.ru/jpg/1685067.jpg',
+                   'https://www.e-katalog.ru/CORSAIR-CMW32GX4M2Z3600C18.htm',
+                   '18789', '21529', '2', '4', '32', '3600')),
+           (pc.RAM('HyperX Fury DDR4 RGB 2x16Gb', 
+                   'https://www.e-katalog.ru/jpg/1685287.jpg',
+                   'https://www.e-katalog.ru/HYPERX-HX437C19FB3AK2-32.htm',
+                   '18900', '19499', '2', '4', '32', '3733')),
+           (pc.RAM('HyperX Predator RGB DDR4 2x16Gb',
+                   'https://www.e-katalog.ru/jpg/1685325.jpg',
+                   'https://www.e-katalog.ru/HYPERX-HX436C17PB3AK2-32.htm',
+                   '19790', '', '2', '4', '32', '3600')),
+    ]
+
+
 if __name__ == '__main':
     main()
