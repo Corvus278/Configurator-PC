@@ -161,8 +161,49 @@ def main():
                                     '4', '3600', '64', '4'))
     ]
 
-
-
+    # Создаём GPU
+    gpu = [
+           (pc.GPU('MSI GeForce GTX 1660 SUPER VENTUS XS OC',
+                   'https://www.e-katalog.ru/jpg/1681945.jpg',
+                   'https://www.e-katalog.ru/MSI-GEFORCE-GTX-1660-SUPER-VENTUS-XS-OC.htm',
+                   '69020', '', 'PCI-E v3.0', '8', '204')),
+            (pc.GPU('MSI Radeon RX 6900 XT GAMING X TRIO 16G',
+                    'https://www.e-katalog.ru/jpg/1972091.jpg',
+                    'https://www.e-katalog.ru/MSI-RADEON-RX-6900-XT-GAMING-X-TRIO-16G.htm',
+                    '176', '', 'PCI-E v4.0', '8*3', '324')),
+            (pc.GPU('XFX Radeon RX 6900 XT RX-69XTACBD9',
+                    'https://www.e-katalog.ru/jpg/1987553.jpg',
+                    'https://www.e-katalog.ru/XFX-RADEON-RX-6900-XT-RX-69XTACBD9.htm',
+                    '175990', '', '	PCI-E v4.0', '8*2', '340')),
+            (pc.GPU('ASRock Radeon RX 6900 XT Phantom Gaming D 16G OC',
+                    'https://www.e-katalog.ru/jpg/1924771.jpg',
+                    'https://www.e-katalog.ru/ASROCK-RADEON-RX-6900-XT-PHANTOM-GAMING-D-16G-OC.htm',
+                    '168300', '', 'PCI-E v4.0', '8*3', '330')),
+            (pc.GPU('Gigabyte Radeon RX 6700 XT EAGLE 12G',
+                    'https://www.e-katalog.ru/jpg/1977441.jpg',
+                    'https://www.e-katalog.ru/GIGABYTE-RADEON-RX-6700-XT-EAGLE-12G.htm',
+                    '118750', '', 'PCI-E v4.0', '6+8', '282')),
+            (pc.GPU('Gigabyte GeForce RTX 3080 AORUS XTREME WATERFORCE 10G',
+                    'https://www.e-katalog.ru/jpg/1910527.jpg',
+                    'https://www.e-katalog.ru/GIGABYTE-GEFORCE-RTX-3080-AORUS-XTREME-WATERFORCE-10G.htm',
+                    '269990', 'PCI-E v4.0', '8*2', '252')),
+            (pc.GPU('INNO3D GeForce RTX 3080 ICHILL X3',
+                    'https://www.e-katalog.ru/jpg/1883177.jpg',
+                    'https://www.e-katalog.ru/INNO3D-GEFORCE-RTX-3080-ICHILL-X3.htm',
+                    '249990', '', 'PCI-E v4.0', '8*2', '300')),
+            (pc.GPU('MSI GeForce RTX 3060 VENTUS 2X 12G OC',
+                    'https://www.e-katalog.ru/jpg/1941016.jpg',
+                    'https://www.e-katalog.ru/MSI-GEFORCE-RTX-3060-VENTUS-2X-12G-OC.htm',
+                    '88000', '115900', 'PCI-E v4.0', '8', '235')),
+            (pc.GPU('MSI GeForce RTX 2060 VENTUS 6G OC',
+                    'https://www.e-katalog.ru/jpg/1500206.jpg',
+                    'https://www.e-katalog.ru/MSI-GEFORCE-RTX-2060-VENTUS-6G-OC.htm',
+                    '81990', '', 'PCI-E v3.0', '8', '226')),
+            (pc.GPU('Asus GeForce RTX 3060 ROG Strix Gaming OC 12GB',
+                    'https://www.e-katalog.ru/jpg/1941067.jpg',
+                    'https://www.e-katalog.ru/ASUS-GEFORCE-RTX-3060-ROG-STRIX-GAMING-OC-12GB.htm',
+                    '108285', 'PCI-E v4.0', '8', '300'))
+    ]
 
 if __name__ == '__main':
     main()
