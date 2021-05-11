@@ -86,15 +86,15 @@ class Case:
 
 
 class Storage:
-    def __init__(self, name, img, url, price_min, price_max, form, sata_form='',
-                 m2_form=''):
+    def __init__(self, name, img, url, price_min, price_max, form, connector=''
+                 m2_form='', m2_interface=''):
         self.name = name
         self.img = img
         self.url = url
         self.price_min = price_min
         self.price_max = price_max
         self.form = form
-        self.sata_form = sata_form
+        self.connector = connector
         self.m2_form = m2_form
 
 class RAM:

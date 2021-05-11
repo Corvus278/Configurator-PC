@@ -239,14 +239,38 @@ def main():
                    'https://www.e-katalog.ru/jpg/1685067.jpg',
                    'https://www.e-katalog.ru/CORSAIR-CMW32GX4M2Z3600C18.htm',
                    '18789', '21529', '2', '4', '32', '3600')),
-           (pc.RAM('HyperX Fury DDR4 RGB 2x16Gb', 
+           'HyperX Fury DDR4 RGB 2x16Gb',
                    'https://www.e-katalog.ru/jpg/1685287.jpg',
                    'https://www.e-katalog.ru/HYPERX-HX437C19FB3AK2-32.htm',
                    '18900', '19499', '2', '4', '32', '3733')),
            (pc.RAM('HyperX Predator RGB DDR4 2x16Gb',
                    'https://www.e-katalog.ru/jpg/1685325.jpg',
                    'https://www.e-katalog.ru/HYPERX-HX436C17PB3AK2-32.htm',
-                   '19790', '', '2', '4', '32', '3600')),
+                   '19790', '', '2', '4', '32', '3600'))
+    ]
+
+    # Содаём накопители
+    storage = [
+               pc.Storage('SSD WD Green SSD M.2 WDS240G2G0B',
+               'https://www.e-katalog.ru/jpg/947253.jpg',
+               'https://www.e-katalog.ru/WD-WDS240G2G0B.htm',
+               '2589', '3999', 'm2', m2_form='80', m2_interface='SATA3'),
+               pc.Storage('SmartBuy SB240GB-RVVL3-25SAT3',
+               'https://www.e-katalog.ru/jpg/1431357.jpg',
+               'https://www.e-katalog.ru/SMARTBUY-SB240GB-RVVL3-25SAT3.htm',
+               '2734', '3818', '2.5' connector='SATA'),
+               pc.Storage('SSD Patriot P300 M.2 P300P256GM28',
+               'https://www.e-katalog.ru/jpg/1741997.jpg',
+               'https://www.e-katalog.ru/PATRIOT-P300P256GM28.htm',
+               '2749', '3906', 'm2', m2_form='80', m2_interface='PCI-E 3.0 4x'),
+               pc.Storage('SSD SmartBuy Stream E13T Pro SBSSD-128GT-PH13P-M2P4',
+               'https://www.e-katalog.ru/jpg/1859186.jpg',
+               'https://www.e-katalog.ru/SMARTBUY-SBSSD-128GT-PH13P-M2P4.htm',
+               '1969', '2440', 'm2', m2_form='80', m2_interface='PCI-E 3.0 4x'),
+               pc.Storage('SSD SmartBuy Stream E13T Pro SBSSD-128GT-PH13P-M2P4',
+               'https://www.e-katalog.ru/jpg/1507857.jpg',
+               'https://www.e-katalog.ru/SAMSUNG-MZ-V7S250BW.htm',
+               '4170', '7990', 'm2', m2_form='80', m2_interface='PCI-E 3.0 4x')
     ]
 
 
