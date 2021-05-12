@@ -309,7 +309,27 @@ def main():
                     'https://www.e-katalog.ru/jpg/1507857.jpg',
                     'https://www.e-katalog.ru/SAMSUNG-MZ-V7S250BW.htm',
                     '4170', '7990', 'm2', m2_form='80',
-                    m2_interface='PCI-E 3.0 4x'))
+                    m2_interface='PCI-E 3.0 4x')),
+        (pc.Storage('Seagate BarraCuda Compute 2.5" ST1000LM048 1 ТБ',
+                    'https://www.e-katalog.ru/jpg/979798.jpg',
+                    'https://www.e-katalog.ru/SEAGATE-ST1000LM048.htm',
+                    '3125', '3970', '2.5', connector='SATA')),
+        (pc.Storage('WD Blue 2.5" WD10SPZX 1 ТБ 128/5400',
+                    'https://www.e-katalog.ru/jpg/1166573.jpg',
+                    'https://www.e-katalog.ru/WD-WD10SPZX.htm',
+                    '3190', '4600', '2.5', connector='SATA')),
+        (pc.Storage('Seagate Mobile HDD 2.5" ST1000LM035 1 ТБ',
+                    'https://www.e-katalog.ru/jpg/831783.jpg',
+                    'https://www.e-katalog.ru/SEAGATE-ST1000LM035.htm',
+                    '3340', '', '2.5', connector='SATA')),
+        (pc.Storage('WD Green WD10EZRX 1 ТБ',
+                    'https://www.e-katalog.ru/jpg/761566.jpg',
+                    'https://www.e-katalog.ru/WD-WD10EZRX.htm',
+                    '12042', '', '3.5', connector='SATA')),
+        (pc.Storage('Seagate FireCuda ST1000DX002 1 ТБ',
+                    'https://www.e-katalog.ru/jpg/927666.jpg',
+                    'https://www.e-katalog.ru/SEAGATE-ST1000DX002.htm',
+                    '8510', '', '3.5', connector='SATA')),
     ]
 
 
