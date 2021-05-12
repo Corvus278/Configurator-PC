@@ -1,8 +1,10 @@
 import sqlite3
 import parts_classes as pc
 
+
 def sql_push(table_name, parts):
     cur.executemany(f"INSERT INTO {table_name} VALUES(?)", parts)
+
 
 def database_start():
     # Подключаем бд
@@ -22,6 +24,7 @@ def database_start():
     cur.execute("CREATE TABLE IF NOT EXISTS wcs(obj)")
     cur.execute("CREATE TABLE IF NOT EXISTS fan(obj)")
 
+
 def main():
     database_start()
 
@@ -33,7 +36,7 @@ def main():
                         '4299', '5530', 'ATX', '4', '6')),
         (pc.PowerSupply('Be quiet Pure Power 11 CM BN298',
                         'https://www.e-katalog.ru/jpg/1555252.jpg',
-                        'https://www.e-katalog.ru/BE-QUIET-BN298.htm'
+                        'https://www.e-katalog.ru/BE-QUIET-BN298.htm',
                         '6888', '8360', 'ATX', '4', '6')),
         (pc.PowerSupply('Cooler Master MWE White 230V V2 MPE-6001-ACABW',
                         'https://www.e-katalog.ru/jpg/1764489.jpg',
@@ -158,7 +161,40 @@ def main():
                                     '7590', '8390', 'ATX', 'AMD AM4', '1-5',
                                     '24', '2', '1xSATA/PCI-E 4x, 1xPCI-E 2x',
                                     '1xSATA/PCI-E 4x, 1xPCI-E 2x', '6', '4',
-                                    '4', '3600', '64', '4'))
+                                    '4', '3600', '64', '4')),
+                    (pc.Motherboard('MSI H410M-A PRO',
+                                    'https://www.e-katalog.ru/jpg/1804482.jpg',
+                                    'https://www.e-katalog.ru/MSI-H410M-A-PRO.htm',
+                                    '5500', '7756', 'micro-ATX',
+                                    'Intel LGA 1200', '10', '24', '1',
+                                    '1xSATA/PCI-E 4x', '4', '2', '4', '2933',
+                                    '64', '2')),
+                    (pc.Motherboard('Asus PRIME H410M-K',
+                                    'https://www.e-katalog.ru/jpg/1793206.jpg',
+                                    'https://www.e-katalog.ru/ASUS-PRIME-H410M-K.htm',
+                                    '5295', '7099', 'micro-ATX',
+                                    'Intel LGA 1200', '10 pentium gold celeron',
+                                    '24', '0', '', '4', '2', '4', '2933', '64',
+                                    '2')),
+                    (pc.Motherboard('ASRock H470M-HDV',
+                                    'https://www.e-katalog.ru/jpg/1968362.jpg',
+                                    'https://www.e-katalog.ru/ASROCK-H470M-HDV.htm',
+                                    '5390', '6220', 'micro-ATX',
+                                    'Intel LGA 1200', '10', '24', '0', '', '4',
+                                    '3', '4', '2933', '64', '2')),
+                    (pc.Motherboard('Gigabyte H410M S2',
+                                    'https://www.e-katalog.ru/jpg/1863797.jpg',
+                                    'https://www.e-katalog.ru/GIGABYTE-H410M-S2.htm',
+                                    '5560', '6590', 'micro-ATX',
+                                    'Intel LGA 1200', '10 pentium', '24', '0',
+                                    '', '4', '2', '4', '2933', '64', '2')),
+                    (pc.Motherboard('ASRock B460 Steel Legend',
+                                    'https://www.e-katalog.ru/jpg/1792678.jpg',
+                                    'https://www.e-katalog.ru/ASROCK-B460-STEEL-LEGEND.htm',
+                                    '8990', '10990', 'ATX', 'Intel LGA 1200',
+                                    '10', '24', '2',
+                                    '1xSATA/PCI-E 4x, 1xPCI-E 4x', '6', '7',
+                                    '4', '2933', '128', '4'))
     ]
 
     # Создаём GPU
@@ -167,42 +203,42 @@ def main():
                    'https://www.e-katalog.ru/jpg/1681945.jpg',
                    'https://www.e-katalog.ru/MSI-GEFORCE-GTX-1660-SUPER-VENTUS-XS-OC.htm',
                    '69020', '', 'PCI-E v3.0', '8', '204')),
-            (pc.GPU('MSI Radeon RX 6900 XT GAMING X TRIO 16G',
-                    'https://www.e-katalog.ru/jpg/1972091.jpg',
-                    'https://www.e-katalog.ru/MSI-RADEON-RX-6900-XT-GAMING-X-TRIO-16G.htm',
-                    '176', '', 'PCI-E v4.0', '8*3', '324')),
-            (pc.GPU('XFX Radeon RX 6900 XT RX-69XTACBD9',
-                    'https://www.e-katalog.ru/jpg/1987553.jpg',
-                    'https://www.e-katalog.ru/XFX-RADEON-RX-6900-XT-RX-69XTACBD9.htm',
-                    '175990', '', '	PCI-E v4.0', '8*2', '340')),
-            (pc.GPU('ASRock Radeon RX 6900 XT Phantom Gaming D 16G OC',
-                    'https://www.e-katalog.ru/jpg/1924771.jpg',
-                    'https://www.e-katalog.ru/ASROCK-RADEON-RX-6900-XT-PHANTOM-GAMING-D-16G-OC.htm',
-                    '168300', '', 'PCI-E v4.0', '8*3', '330')),
-            (pc.GPU('Gigabyte Radeon RX 6700 XT EAGLE 12G',
-                    'https://www.e-katalog.ru/jpg/1977441.jpg',
-                    'https://www.e-katalog.ru/GIGABYTE-RADEON-RX-6700-XT-EAGLE-12G.htm',
-                    '118750', '', 'PCI-E v4.0', '6+8', '282')),
-            (pc.GPU('Gigabyte GeForce RTX 3080 AORUS XTREME WATERFORCE 10G',
-                    'https://www.e-katalog.ru/jpg/1910527.jpg',
-                    'https://www.e-katalog.ru/GIGABYTE-GEFORCE-RTX-3080-AORUS-XTREME-WATERFORCE-10G.htm',
-                    '269990', 'PCI-E v4.0', '8*2', '252')),
-            (pc.GPU('INNO3D GeForce RTX 3080 ICHILL X3',
-                    'https://www.e-katalog.ru/jpg/1883177.jpg',
-                    'https://www.e-katalog.ru/INNO3D-GEFORCE-RTX-3080-ICHILL-X3.htm',
-                    '249990', '', 'PCI-E v4.0', '8*2', '300')),
-            (pc.GPU('MSI GeForce RTX 3060 VENTUS 2X 12G OC',
-                    'https://www.e-katalog.ru/jpg/1941016.jpg',
-                    'https://www.e-katalog.ru/MSI-GEFORCE-RTX-3060-VENTUS-2X-12G-OC.htm',
-                    '88000', '115900', 'PCI-E v4.0', '8', '235')),
-            (pc.GPU('MSI GeForce RTX 2060 VENTUS 6G OC',
-                    'https://www.e-katalog.ru/jpg/1500206.jpg',
-                    'https://www.e-katalog.ru/MSI-GEFORCE-RTX-2060-VENTUS-6G-OC.htm',
-                    '81990', '', 'PCI-E v3.0', '8', '226')),
-            (pc.GPU('Asus GeForce RTX 3060 ROG Strix Gaming OC 12GB',
-                    'https://www.e-katalog.ru/jpg/1941067.jpg',
-                    'https://www.e-katalog.ru/ASUS-GEFORCE-RTX-3060-ROG-STRIX-GAMING-OC-12GB.htm',
-                    '108285', 'PCI-E v4.0', '8', '300'))
+           (pc.GPU('MSI Radeon RX 6900 XT GAMING X TRIO 16G',
+                   'https://www.e-katalog.ru/jpg/1972091.jpg',
+                   'https://www.e-katalog.ru/MSI-RADEON-RX-6900-XT-GAMING-X-TRIO-16G.htm',
+                   '176', '', 'PCI-E v4.0', '8*3', '324')),
+           (pc.GPU('XFX Radeon RX 6900 XT RX-69XTACBD9',
+                   'https://www.e-katalog.ru/jpg/1987553.jpg',
+                   'https://www.e-katalog.ru/XFX-RADEON-RX-6900-XT-RX-69XTACBD9.htm',
+                   '175990', '', '	PCI-E v4.0', '8*2', '340')),
+           (pc.GPU('ASRock Radeon RX 6900 XT Phantom Gaming D 16G OC',
+                   'https://www.e-katalog.ru/jpg/1924771.jpg',
+                   'https://www.e-katalog.ru/ASROCK-RADEON-RX-6900-XT-PHANTOM-GAMING-D-16G-OC.htm',
+                   '168300', '', 'PCI-E v4.0', '8*3', '330')),
+           (pc.GPU('Gigabyte Radeon RX 6700 XT EAGLE 12G',
+                   'https://www.e-katalog.ru/jpg/1977441.jpg',
+                   'https://www.e-katalog.ru/GIGABYTE-RADEON-RX-6700-XT-EAGLE-12G.htm',
+                   '118750', '', 'PCI-E v4.0', '6+8', '282')),
+           (pc.GPU('Gigabyte GeForce RTX 3080 AORUS XTREME WATERFORCE 10G',
+                   'https://www.e-katalog.ru/jpg/1910527.jpg',
+                   'https://www.e-katalog.ru/GIGABYTE-GEFORCE-RTX-3080-AORUS-XTREME-WATERFORCE-10G.htm',
+                   '269990', '', 'PCI-E v4.0', '8*2', '252')),
+           (pc.GPU('INNO3D GeForce RTX 3080 ICHILL X3',
+                   'https://www.e-katalog.ru/jpg/1883177.jpg',
+                   'https://www.e-katalog.ru/INNO3D-GEFORCE-RTX-3080-ICHILL-X3.htm',
+                   '249990', '', 'PCI-E v4.0', '8*2', '300')),
+           (pc.GPU('MSI GeForce RTX 3060 VENTUS 2X 12G OC',
+                   'https://www.e-katalog.ru/jpg/1941016.jpg',
+                   'https://www.e-katalog.ru/MSI-GEFORCE-RTX-3060-VENTUS-2X-12G-OC.htm',
+                   '88000', '115900', 'PCI-E v4.0', '8', '235')),
+           (pc.GPU('MSI GeForce RTX 2060 VENTUS 6G OC',
+                   'https://www.e-katalog.ru/jpg/1500206.jpg',
+                   'https://www.e-katalog.ru/MSI-GEFORCE-RTX-2060-VENTUS-6G-OC.htm',
+                   '81990', '', 'PCI-E v3.0', '8', '226')),
+           (pc.GPU('Asus GeForce RTX 3060 ROG Strix Gaming OC 12GB',
+                   'https://www.e-katalog.ru/jpg/1941067.jpg',
+                   'https://www.e-katalog.ru/ASUS-GEFORCE-RTX-3060-ROG-STRIX-GAMING-OC-12GB.htm',
+                   '108285', '', 'PCI-E v4.0', '8', '300'))
     ]
 
     # Создаём ram
@@ -239,7 +275,7 @@ def main():
                    'https://www.e-katalog.ru/jpg/1685067.jpg',
                    'https://www.e-katalog.ru/CORSAIR-CMW32GX4M2Z3600C18.htm',
                    '18789', '21529', '2', '4', '32', '3600')),
-           'HyperX Fury DDR4 RGB 2x16Gb',
+           (pc.RAM('HyperX Fury DDR4 RGB 2x16Gb',
                    'https://www.e-katalog.ru/jpg/1685287.jpg',
                    'https://www.e-katalog.ru/HYPERX-HX437C19FB3AK2-32.htm',
                    '18900', '19499', '2', '4', '32', '3733')),
@@ -251,26 +287,29 @@ def main():
 
     # Содаём накопители
     storage = [
-               pc.Storage('SSD WD Green SSD M.2 WDS240G2G0B',
-               'https://www.e-katalog.ru/jpg/947253.jpg',
-               'https://www.e-katalog.ru/WD-WDS240G2G0B.htm',
-               '2589', '3999', 'm2', m2_form='80', m2_interface='SATA3'),
-               pc.Storage('SmartBuy SB240GB-RVVL3-25SAT3',
-               'https://www.e-katalog.ru/jpg/1431357.jpg',
-               'https://www.e-katalog.ru/SMARTBUY-SB240GB-RVVL3-25SAT3.htm',
-               '2734', '3818', '2.5' connector='SATA'),
-               pc.Storage('SSD Patriot P300 M.2 P300P256GM28',
-               'https://www.e-katalog.ru/jpg/1741997.jpg',
-               'https://www.e-katalog.ru/PATRIOT-P300P256GM28.htm',
-               '2749', '3906', 'm2', m2_form='80', m2_interface='PCI-E 3.0 4x'),
-               pc.Storage('SSD SmartBuy Stream E13T Pro SBSSD-128GT-PH13P-M2P4',
-               'https://www.e-katalog.ru/jpg/1859186.jpg',
-               'https://www.e-katalog.ru/SMARTBUY-SBSSD-128GT-PH13P-M2P4.htm',
-               '1969', '2440', 'm2', m2_form='80', m2_interface='PCI-E 3.0 4x'),
-               pc.Storage('SSD SmartBuy Stream E13T Pro SBSSD-128GT-PH13P-M2P4',
-               'https://www.e-katalog.ru/jpg/1507857.jpg',
-               'https://www.e-katalog.ru/SAMSUNG-MZ-V7S250BW.htm',
-               '4170', '7990', 'm2', m2_form='80', m2_interface='PCI-E 3.0 4x')
+        (pc.Storage('SSD WD Green SSD M.2 WDS240G2G0B',
+                    'https://www.e-katalog.ru/jpg/947253.jpg',
+                    'https://www.e-katalog.ru/WD-WDS240G2G0B.htm',
+                    '2589', '3999', 'm2', m2_form='80', m2_interface='SATA3')),
+        (pc.Storage('SmartBuy SB240GB-RVVL3-25SAT3',
+                    'https://www.e-katalog.ru/jpg/1431357.jpg',
+                    'https://www.e-katalog.ru/SMARTBUY-SB240GB-RVVL3-25SAT3.htm',
+                    '2734', '3818', '2.5', connector='SATA')),
+        (pc.Storage('SSD Patriot P300 M.2 P300P256GM28',
+                    'https://www.e-katalog.ru/jpg/1741997.jpg',
+                    'https://www.e-katalog.ru/PATRIOT-P300P256GM28.htm',
+                    '2749', '3906', 'm2', m2_form='80',
+                    m2_interface='PCI-E 3.0 4x')),
+        (pc.Storage('SSD SmartBuy Stream E13T Pro SBSSD-128GT-PH13P-M2P4',
+                    'https://www.e-katalog.ru/jpg/1859186.jpg',
+                    'https://www.e-katalog.ru/SMARTBUY-SBSSD-128GT-PH13P-M2P4.htm',
+                    '1969', '2440', 'm2', m2_form='80',
+                    m2_interface='PCI-E 3.0 4x')),
+        (pc.Storage('SSD SmartBuy Stream E13T Pro SBSSD-128GT-PH13P-M2P4',
+                    'https://www.e-katalog.ru/jpg/1507857.jpg',
+                    'https://www.e-katalog.ru/SAMSUNG-MZ-V7S250BW.htm',
+                    '4170', '7990', 'm2', m2_form='80',
+                    m2_interface='PCI-E 3.0 4x'))
     ]
 
 

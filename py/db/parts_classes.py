@@ -86,7 +86,7 @@ class Case:
 
 
 class Storage:
-    def __init__(self, name, img, url, price_min, price_max, form, connector=''
+    def __init__(self, name, img, url, price_min, price_max, form, connector='',
                  m2_form='', m2_interface=''):
         self.name = name
         self.img = img
@@ -96,6 +96,7 @@ class Storage:
         self.form = form
         self.connector = connector
         self.m2_form = m2_form
+        self.m2_interface = m2_interface
 
 class RAM:
     def __init__(self, name, img, url, price_min, price_max, die_count, ddr,
