@@ -18,7 +18,7 @@ def database_start():
     cur.execute("CREATE TABLE IF NOT EXISTS cpu(obj)")
     cur.execute("CREATE TABLE IF NOT EXISTS gpu(obj)")
     cur.execute("CREATE TABLE IF NOT EXISTS power_supply(obj)")
-    cur.execute("CREATE TABLE IF NOT EXISTS case_(obj)")
+    cur.execute("CREATE TABLE IF NOT EXISTS Сase(obj)")
     cur.execute("CREATE TABLE IF NOT EXISTS storage(obj)")
     cur.execute("CREATE TABLE IF NOT EXISTS cooler(obj)")
     cur.execute("CREATE TABLE IF NOT EXISTS wcs(obj)")

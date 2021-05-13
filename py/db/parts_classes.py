@@ -10,7 +10,7 @@ class Motherboard:
         self.price_min = price_min
         self.price_max = price_max
         self.form = form
-        self.chipset = chipset
+        self.socket = socket
         self.proc_list = proc_list
         self.pins = pins
         self.m2_count = m2_count

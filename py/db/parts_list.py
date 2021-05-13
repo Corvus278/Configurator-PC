@@ -1,4 +1,12 @@
+import json
 import parts_classes as pc
+
+
+def json_transform(parts_list):
+    new_list = []
+    for cortege_part in parts_list:
+        new_list.append(json.dumps(cortege_part.__dict__))
+    return new_list
 
 
 # Блоки питания
@@ -368,3 +376,13 @@ fans = [
             'https://www.e-katalog.ru/NOCTUA-NF-A12X25-PWM.htm',
             '2630', '2800', '120', '4', count='3'))
 ]
+
+
+motherboards = json_transform(motherboards)
+cpu = json_transform(cpu)
+gpu = json_transform(gpu)
+ram = json_transform(ram)
+power_supplies = json_transform(power_supplies)
+storage = json_transform(storage)
+coolers = json_transform(coolers)
+fans = json_transform(fans)
