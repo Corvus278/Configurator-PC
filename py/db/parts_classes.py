@@ -137,11 +137,13 @@ class WCS:
 
 
 class Fan:
-    def __init__(self, name, img, url, price_min, price_max, weight, count='1'):
+    def __init__(self, name, img, url, price_min, price_max, weight, pins,
+                 count='1'):
         self.name = name
         self.img = img
         self.url = url
         self.price_min = price_min
         self.price_max = price_max
         self.weight = weight
+        self.pins = pins
         self.count = count
