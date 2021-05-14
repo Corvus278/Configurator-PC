@@ -377,8 +377,34 @@ fans = [
             '2630', '2800', '120', '4', count='3'))
 ]
 
+# Корпуса
+cases = [
+    pc.Case('Aerocool Trinity Mini V1 черный',
+            'https://www.e-katalog.ru/jpg/1989752.jpg',
+            'https://www.e-katalog.ru/AEROCOOL-TRINITY-MINI-V1.htm',
+            '2050', '2510', 'micro-ATX', '', 'ATX', '159', '297', '158', '3',
+            '2', '1x120', '2x140/2x120', '2x120', '2x120', '1'),
+    pc.Case('Cooler Master MasterBox Q300P чёрный',
+            'https://www.e-katalog.ru/jpg/1372115.jpg',
+            'https://www.e-katalog.ru/COOLER-MASTER-MASTERBOX-Q300P.htm',
+            '4140', '6394', 'micro-ATX', '', 'ATX', '', '360', '157', '2',
+            '1', '1x120', '2x140/2x120', '2x120', '1x120', '3'),
+    pc.Case('Aerocool Ore Tempered Glass чёрный',
+            'https://www.e-katalog.ru/jpg/1845871.jpg',
+            'https://www.e-katalog.ru/AEROCOOL-ORE-TEMPERED-GLASS.htm',
+            '3174', '3886', 'ATX', '', 'ATX', '', '371', '155', '5',
+            '2', '1x120', '3x120', '', '2x120', '4'),
+    pc.Case('Aerocool Aero One Frost белый',
+            'https://www.e-katalog.ru/jpg/1728731.jpg',
+            'https://www.e-katalog.ru/AEROCOOL-AERO-ONE-FROST-4710562752335.htm',
+            '4195', '5520', 'ATX', '', 'ATX', '', '327', '161', '3',
+            '2', '1x120', '2x140/3x120', '2x120', '', '4')
+
+]
+
 
 motherboards = json_transform(motherboards)
+cases = json_transform(cases)
 cpu = json_transform(cpu)
 gpu = json_transform(gpu)
 ram = json_transform(ram)

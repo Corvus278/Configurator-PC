@@ -66,9 +66,10 @@ class PowerSupply:
 
 class Case:
     def __init__(self, name, img, url, price_min, price_max, form_motherboard,
-                 power_supply, form__power_supply,
-                 gpu_length_max, sata__2_5__count, sata__3_5__count, fans_front,
-                 fans_top, fans_back):
+                 power_supply, form__power_supply, weight_power_supply,
+                 gpu_length_max, height_cooler, sata__2_5__count,
+                 sata__3_5__count, fans_back_count, fans_front_count,
+                 fans_top_count, fans_bottom_count, fans_installed):
         self.name = name
         self.img = img
         self.url = url
@@ -77,12 +78,16 @@ class Case:
         self.form_motherboard = form_motherboard
         self.power_supply = power_supply
         self.form__power_supply = form__power_supply
+        self.weight_power_supply = weight_power_supply
         self.gpu_length_max = gpu_length_max
+        self.height_cooler = height_cooler
         self.sata__2_5__count = sata__2_5__count
         self.sata__3_5__count = sata__3_5__count
-        self.fans_front = fans_front
-        self.fans_top = fans_top
-        self.fans_back = fans_back
+        self.fans_front_count = fans_front_count
+        self.fans_top_count = fans_top_count
+        self.fans_back_count = fans_back_count
+        self.fans_bottom_count = fans_bottom_count
+        self.fans_installed = fans_installed
 
 
 class Storage:
