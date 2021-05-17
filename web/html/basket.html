@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Конфигуратор PC</title>
+  <title>Корзина - Конфигуратор PC</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -18,7 +18,7 @@
         </a>
       </h1>
       <div class="basket">
-        <a class="basket__link" href="basket.html">
+        <a class="basket__link" href="">
           <svg class="basket-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" width="1280.000000pt"
             height="1225.000000pt" viewBox="0 0 1280.000000 1225.000000" preserveAspectRatio="xMidYMid meet">
             <metadata>
@@ -147,6 +147,50 @@
             </div>
           </li>
         </ul>
+      </div>
+    </section>
+    <section class="section-general-info">
+      <div class="genaral-info__container">
+        <article class="general-info">
+          <ul class="general-info-list">
+            <li class="general-info-item general-info-item--price">
+              <label class="general-info-item__label general-info-item__label--price" for="general-price">
+                Общая цена:
+              </label>
+              <div class="general-info-item__value general-info-item__value--price" id="general-price">
+                <span class="general-info-item__price-min">
+                  10 000р
+                </span>
+                <span class="general-info-item__price-max">
+                  100 000р
+                </span>
+              </div>
+            </li>
+            <li class="general-info-item general-info-item--collected">
+              <label class="general-info-item__label general-info-item__label--collected" for="collected">
+                Собрано комплектующих:
+              </label>
+              <div class="general-info-item__value general-info-item__value--collected" id="collected">
+                <span class="general-info-item__user-collected">
+                  9
+                </span>
+                <span class="general-info-item__must-collected">
+                  /9
+                </span>
+              </div>
+            </li>
+            <li class="general-info-item general-info-item--general-compatibility">
+              <label class="general-info-item__label general-info-item__label--general-compatibility"
+                for="general-compatibility">
+                Совместимость:
+              </label>
+              <p class="general-info-item__value general-info-item__value--general-compatibility"
+                id="general-compatibility">
+                Все комплектующие совместимы
+              </p>
+            </li>
+          </ul>
+        </article>
       </div>
     </section>
   </main>
