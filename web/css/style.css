@@ -184,4 +184,36 @@ img {
   cursor: pointer;
 }
 
-/*  */
+/* basket */
+.genaral-info__container {
+  position: fixed;
+  right: 10%;
+  top: 152px;
+}
+
+.general-info {
+  padding: 12px;
+  padding-left: 23px;
+  background-color: #0D1117;
+  border-left: 3px solid var(--border-color);
+  transition: border-color 0.2s;
+}
+
+.general-info-item:not(:last-child) {
+  margin-bottom: 13px;
+}
+
+.general-info-item__value {
+  font-size: 24px;
+  color: white;
+}
+
+.general-info:hover {
+  border-color: var(--main-color);
+}
+
+@media (max-width: 1849px) {
+  .genaral-info__container {
+    right: 0px;
+  }
+}
