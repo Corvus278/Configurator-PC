@@ -6,14 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Корзина - Конфигуратор PC</title>
-  <link rel="stylesheet" href="../css/style.css">
+   {% load static %}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
 <body class="part_list-body body">
   <header class="header index-header">
     <div class="container">
       <h1 class="header__heading">
-        <a href="index.html">
+        <a href="{% url 'part_list' %}">
           Конфигуратор PC
         </a>
       </h1>
@@ -94,6 +95,8 @@
     <section class="section-part_list">
       <div class="container">
         <ul class="part_list">
+          {% if parts %}
+          {% for partType, part in parts %}
           <li class="part">
             <div class="part__wrapper">
               <div class="part__left">
@@ -101,51 +104,29 @@
               </div>
               <div class="part__right">
                 <h3 class="part__heading">
-                  Название
+                  {{partType}}: {{ part.name }}
                 </h3>
                 <div class="part__price-wrapper">
                   <span class="part__price-min">
-                    Минимальная
+                    {{ part.price_min }}
                   </span>
                   <span>
                     -
                   </span>
                   <span class="part__price-max">
-                    Максимальная
+                    {{ part.price_max }}
                   </span>
                 </div>
                 <button class="part__button-add">
-                  Удалить
+                  <a class="add"  href="delete/{{part.id}}/">Удалить</a>
                 </button>
               </div>
             </div>
           </li>
-          <li class="part">
-            <div class="part__wrapper">
-              <div class="part__left">
-                <img class="part__img" src="" alt="">
-              </div>
-              <div class="part__right">
-                <h3 class="part__heading">
-                  Название
-                </h3>
-                <div class="part__price-wrapper">
-                  <span class="part__price-min">
-                    Минимальная
-                  </span>
-                  <span>
-                    -
-                  </span>
-                  <span class="part__price-max">
-                    Максимальная
-                  </span>
-                </div>
-                <button class="part__button-add">
-                  Удалить
-                </button>
-              </div>
-            </div>
-          </li>
+          {% endfor %}
+          {% else %}
+            Ваша корзина ещё пуста? Советуем срочно это исправить!
+          {% endif %}
         </ul>
       </div>
     </section>
@@ -159,13 +140,13 @@
               </label>
               <div class="general-info-item__value general-info-item__value--price" id="general-price">
                 <span class="general-info-item__price-min">
-                  10 000р
+                  {{sum_price_min}}
                 </span>
                 <span>
                   -
                 </span>
                 <span class="general-info-item__price-max">
-                  100 000р
+                  {{sum_price_max}}
                 </span>
               </div>
             </li>
@@ -175,7 +156,7 @@
               </label>
               <div class="general-info-item__value general-info-item__value--collected" id="collected">
                 <span class="general-info-item__user-collected">
-                  9
+                  {{count}}
                 </span>
                 <span class="general-info-item__must-collected">
                   / 9

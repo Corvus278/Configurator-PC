@@ -14,12 +14,12 @@
   <header class="header index-header">
     <div class="container">
       <h1 class="header__heading">
-        <a href="index.html">
+        <a href="">
           Конфигуратор PC
         </a>
       </h1>
       <div class="basket">
-        <a class="basket__link" href="basket.html">
+        <a class="basket__link" href="basket">
           <svg class="basket-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" width="1280.000000pt"
             height="1225.000000pt" viewBox="0 0 1280.000000 1225.000000" preserveAspectRatio="xMidYMid meet">
             <metadata>
@@ -103,52 +103,26 @@
                 </div>
                 <div class="part__right">
                   <h3 class="part__heading">
-                    Процессор: {{ part.name }}
+                    {{ part.name }}
                   </h3>
                   <div class="part__price-wrapper">
                     <span class="part__price-min">
-                      Минимальная
+                      {{ part.price_min }}
                     </span>
                     <span>
                       -
                     </span>
                     <span class="part__price-max">
-                      Максимальная
+                      {{ part.price_max }}
                     </span>
                   </div>
                   <button class="part__button-add">
-                    Добавить
+                    <a class="add"  href="add/{{part.id}}/">Добавить</a>
                   </button>
                 </div>
               </div>
             </li>
           {% endfor %}
-          <li class="part">
-            <div class="part__wrapper">
-              <div class="part__left">
-                <img class="part__img" src="" alt="">
-              </div>
-              <div class="part__right">
-                <h3 class="part__heading">
-                  Название
-                </h3>
-                <div class="part__price-wrapper">
-                  <span class="part__price-min">
-                    Минимальная
-                  </span>
-                  <span>
-                    -
-                  </span>
-                  <span class="part__price-max">
-                    Максимальная
-                  </span>
-                </div>
-                <button class="part__button-add">
-                  Добавить
-                </button>
-              </div>
-            </div>
-          </li>
         </ul>
       </div>
     </section>
