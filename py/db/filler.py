@@ -2,10 +2,28 @@ import sqlite3
 import parts_list as pl
 
 
+def check_values(l):
+    """Если элемент списка является списком, он переделывается в строку
+    (разделитель - , )"""
+    new_list = []
+    for i in l:
+        if type(i) == list:
+            i = ', '.join(i)
+        new_list.append(i)
+    return new_list
+
+
 def sql_push(table_name, parts, cur):
     for part in parts:
-        request = "INSERT INTO" + ' ' + table_name + "(dict) VALUES(?)"
-        cur.execute(request, (part,))
+        keys = ', '.join(part.keys())
+        values = part.values()
+        values = check_values(values)
+        values = tuple(values)
+        columns = '?,' * len(values)
+        columns = columns[:-1]  # Убираем последнюю запятую
+        request = 'INSERT INTO ' + table_name + ' ' + '(' + keys + ')' + \
+                  'VALUES (' + columns + ')'
+        cur.execute(request, values)
 
 
 def main():
@@ -13,18 +31,6 @@ def main():
     conn = sqlite3.connect('parts.db')
     # Содаём курсор для осуществления SQL запросов
     cur = conn.cursor()
-
-    # Создаём таблицу для каждой комплектующей
-    cur.execute("CREATE TABLE IF NOT EXISTS motherboard(dict TEXT)")
-    cur.execute("CREATE TABLE IF NOT EXISTS cpu(dict TEXT)")
-    cur.execute("CREATE TABLE IF NOT EXISTS gpu(dict TEXT)")
-    cur.execute("CREATE TABLE IF NOT EXISTS ram(dict TEXT)")
-    cur.execute("CREATE TABLE IF NOT EXISTS power_supply(dict TEXT)")
-    cur.execute("CREATE TABLE IF NOT EXISTS case_(dict TEXT)")
-    cur.execute("CREATE TABLE IF NOT EXISTS storage(dict TEXT)")
-    cur.execute("CREATE TABLE IF NOT EXISTS cooler(dict TEXT)")
-    cur.execute("CREATE TABLE IF NOT EXISTS wcs(dict TEXT)")
-    cur.execute("CREATE TABLE IF NOT EXISTS fan(dict TEXT)")
 
     # Добавляем данные в базу
     sql_push('motherboard', pl.motherboards, cur)
