@@ -76,6 +76,9 @@ WSGI_APPLICATION = 'ConfiguratorPC.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -87,6 +90,7 @@ DATABASES = {
     }
 }
 
+DATABASE_ROUTERS = ['configuratorPCapp.db_routers.PartsRouter', 'configuratorPCapp.db_routers.DefaultRouter' ]
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

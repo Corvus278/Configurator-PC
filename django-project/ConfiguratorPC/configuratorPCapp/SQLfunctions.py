@@ -1,35 +1,34 @@
-import json
 
-def json2dict(one_part):
-    return json.loads(one_part)
 
-def dict2json(one_part):
-    return json.dumps(one_part)
+from icecream import ic
+import sqlite3
+from django.conf import settings
 
-def listdict2json(parts_list):
-    new_list = []
-    for cortege_part in parts_list:
-        new_list.append(json.dumps(cortege_part))
-    return new_list
 
-def json2listdict(parts_list):
-    new_list = []
-    for cortege_part in parts_list:
-        new_list.append(json.loads(cortege_part))
-    return new_list
+def cortage2dict(cursor, cortage):
+    argNames = [description[0] for description in cursor.description]
+    return {argNames[i]: cortage[i] for i in range(len(argNames))}
 
-def sql2ListDict(ListCortage):
-    return [json2dict(cortage[0]) for cortage in ListCortage]
 
-def getListFromBD(table):
-    import sqlite3
-    from django.conf import settings
-    conn = sqlite3.connect(settings.DATABASES["parts"]["NAME"])
+def getListFromTable(table):
+    dbName = settings.DATABASES["parts"]["NAME"]
+    conn = sqlite3.connect(dbName)
     cursor = conn.cursor()
 
     cursor.execute("SELECT * FROM "+table)
 
     # перегнать в список словарей
-    dictList = sql2ListDict(cursor.execute("SELECT * FROM "+table).fetchall())
-
+    argNames = [description[0] for description in cursor.description]
+    ansList = cursor.execute("SELECT * FROM "+table).fetchall()
+    dictList = [{argNames[i]: ans1[i] for i in range(len(argNames))} for ans1 in ansList]
+    conn.close()
     return dictList
+
+
+def getFromTable(id, table):
+    conn = sqlite3.connect(settings.DATABASES["parts"]["NAME"])
+    cursor = conn.cursor()
+    ansCortage = cursor.execute("SELECT * FROM "+table+" WHERE id = ?", (id,)).fetchone()
+    ansDict = cortage2dict(cursor,ansCortage)
+    conn.close()
+    return ansDict
