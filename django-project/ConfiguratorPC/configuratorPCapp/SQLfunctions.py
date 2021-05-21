@@ -1,6 +1,3 @@
-
-
-from icecream import ic
 import sqlite3
 from django.conf import settings
 
@@ -29,6 +26,6 @@ def getFromTable(id, table):
     conn = sqlite3.connect(settings.DATABASES["parts"]["NAME"])
     cursor = conn.cursor()
     ansCortage = cursor.execute("SELECT * FROM "+table+" WHERE id = ?", (id,)).fetchone()
-    ansDict = cortage2dict(cursor,ansCortage)
+    ansDict = cortage2dict(cursor, ansCortage)
     conn.close()
     return ansDict
