@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80e7000b-bcc0-4101-ae10-ff636059fdbd" name="Default Changelist" comment="Поменял таблицы в бд">
-      <change afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/filter_parts.py" afterDir="false" />
+    <list default="true" id="80e7000b-bcc0-4101-ae10-ff636059fdbd" name="Default Changelist" comment="Заново создал столбцы в бд">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/py/db/filler.py" beforeDir="false" afterPath="$PROJECT_DIR$/py/db/filler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/py/db/parts.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/py/db/parts_classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/py/db/parts_classes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/py/db/parts_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/py/db/parts_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/parts.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/py/db/parts.db" beforeDir="false" afterPath="$PROJECT_DIR$/py/db/parts.db" afterDir="false" />
     </list>
+    <list id="f5a0a8c0-b52e-489b-90d9-1aa988d8c3b7" name="Заново создал столбцы в бд" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,8 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -34,11 +32,12 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/py/db" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/django-project/ConfiguratorPC" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Документы\Configurator-PC\django-project\ConfiguratorPC" />
       <recent name="F:\Документы\Configurator-PC\py\db" />
     </key>
   </component>
@@ -127,7 +126,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="scratch_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="scratch_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Configurator-PC" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -139,7 +138,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -151,10 +150,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.filler" />
+        <item itemvalue="Python.scratch_1" />
         <item itemvalue="Python.scratch" />
         <item itemvalue="Python.parts_list" />
         <item itemvalue="Python.code" />
-        <item itemvalue="Python.scratch_3" />
       </list>
     </recent_temporary>
   </component>
@@ -162,6 +161,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="80e7000b-bcc0-4101-ae10-ff636059fdbd" name="Default Changelist" comment="" />
+      <changelist id="f5a0a8c0-b52e-489b-90d9-1aa988d8c3b7" name="Заново создал столбцы в бд" comment="" />
       <created>1621159610911</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -181,7 +181,42 @@
       <option name="project" value="LOCAL" />
       <updated>1621413867874</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Наполнил бд по новому формату">
+      <created>1621432278794</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1621432278794</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Поправил офрагарфию">
+      <created>1621590878335</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1621590878335</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Заново создал столбцы в бд">
+      <created>1621842291358</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1621842291358</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Заново создал столбцы в бд">
+      <created>1621843448759</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1621843448759</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Заново создал столбцы в бд">
+      <created>1621843592683</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1621843592683</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,6 +234,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавил 2 цп в бд по новому формату" />
     <MESSAGE value="Поменял таблицы в бд" />
-    <option name="LAST_COMMIT_MESSAGE" value="Поменял таблицы в бд" />
+    <MESSAGE value="Наполнил бд по новому формату" />
+    <MESSAGE value="Поправил офрагарфию" />
+    <MESSAGE value="Заново создал столбцы в бд" />
+    <option name="LAST_COMMIT_MESSAGE" value="Заново создал столбцы в бд" />
   </component>
 </project>
