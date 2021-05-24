@@ -6,19 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Конфигуратор PC</title>
-  <link rel="stylesheet" href="../css/style.css">
+   {% load static %}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
 <body class="index-body body">
   <header class="header index-header">
     <div class="container">
       <h1 class="header__heading">
-        <a href="index.html">
+        <a href="">
           Конфигуратор PC
         </a>
       </h1>
       <div class="basket">
-        <a class="basket__link" href="basket.html">
+        <a class="basket__link" href="basket">
           <svg class="basket-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" width="1280.000000pt"
             height="1225.000000pt" viewBox="0 0 1280.000000 1225.000000" preserveAspectRatio="xMidYMid meet">
             <metadata>
@@ -92,16 +93,21 @@
   <main>
     <div class="container">
       <ul class="parts-cards">
+        {% for partType, name in partTypes %}
         <li class="part-card">
           <h2 class="part-card__heading">
-            <a href="" class="part-card__link">
-              Материнская плата
+            <a href="part_list/{{partType}}" class="part-card__link">
+              {{ name }}
             </a>
           </h2>
         </li>
+        {% endfor %}
+
+
+        <!--
         <li class="part-card">
           <h2 class="part-card__heading">
-            <a href="" class="part-card__link">
+            <a href="part_list/cpu" class="part-card__link">
               Процессор
             </a>
           </h2>
@@ -155,6 +161,7 @@
             </a>
           </h2>
         </li>
+        -->
       </ul>
     </div>
   </main>

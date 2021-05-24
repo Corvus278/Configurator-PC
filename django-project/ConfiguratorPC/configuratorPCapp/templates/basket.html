@@ -14,7 +14,7 @@
   <header class="header index-header">
     <div class="container">
       <h1 class="header__heading">
-        <a href="{% url 'part_list' %}">
+        <a href="home">
           Конфигуратор PC
         </a>
       </h1>
@@ -104,7 +104,7 @@
               </div>
               <div class="part__right">
                 <h3 class="part__heading">
-                  {{partType}}: {{ part.name }}
+                  {{ part.name }}
                 </h3>
                 <div class="part__price-wrapper">
                   <span class="part__price-min">
@@ -118,7 +118,7 @@
                   </span>
                 </div>
                 <button class="part__button-add">
-                  <a class="add"  href="delete/{{part.id}}/">Удалить</a>
+                  <a class="add"  href="delete/{{partType}}/{{part.id}}/">Удалить</a>
                 </button>
               </div>
             </div>

@@ -14,12 +14,12 @@
   <header class="header index-header">
     <div class="container">
       <h1 class="header__heading">
-        <a href="">
+        <a href="{% url 'home' %}">
           Конфигуратор PC
         </a>
       </h1>
       <div class="basket">
-        <a class="basket__link" href="basket">
+        <a class="basket__link" href="{% url 'basket' %}">
           <svg class="basket-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" width="1280.000000pt"
             height="1225.000000pt" viewBox="0 0 1280.000000 1225.000000" preserveAspectRatio="xMidYMid meet">
             <metadata>
@@ -117,7 +117,7 @@
                     </span>
                   </div>
                   <button class="part__button-add">
-                    <a class="add"  href="add/{{part.id}}/">Добавить</a>
+                    <a class="add"  href="/add/{{partType}}/{{part.id}}">Добавить</a>
                   </button>
                 </div>
               </div>
