@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80e7000b-bcc0-4101-ae10-ff636059fdbd" name="Default Changelist" comment="Заново создал столбцы в бд">
+    <list default="true" id="80e7000b-bcc0-4101-ae10-ff636059fdbd" name="Default Changelist" comment="Перенёс бд в django-project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/parts.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/py/db/parts.db" beforeDir="false" afterPath="$PROJECT_DIR$/py/db/parts.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/check_compatibility.py" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/check_compatibility.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py/db/filler.py" beforeDir="false" afterPath="$PROJECT_DIR$/py/db/filler.py" afterDir="false" />
     </list>
     <list id="f5a0a8c0-b52e-489b-90d9-1aa988d8c3b7" name="Заново создал столбцы в бд" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,28 +41,7 @@
       <recent name="F:\Документы\Configurator-PC\py\db" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.filler">
-    <configuration name="code" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Configurator-PC" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../code.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.test__check_compatibility">
     <configuration name="filler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Configurator-PC" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -147,13 +126,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test__check_compatibility" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Configurator-PC" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/test__check_compatibility.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test__check_compatibility" />
+        <item itemvalue="Python.scratch" />
         <item itemvalue="Python.filler" />
         <item itemvalue="Python.scratch_1" />
-        <item itemvalue="Python.scratch" />
         <item itemvalue="Python.parts_list" />
-        <item itemvalue="Python.code" />
       </list>
     </recent_temporary>
   </component>
@@ -216,7 +216,28 @@
       <option name="project" value="LOCAL" />
       <updated>1621843592683</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Заполнил бд по новому формату">
+      <created>1621843862453</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1621843862453</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Начал разработку фильтра совместимости">
+      <created>1621843920067</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1621843920067</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Перенёс бд в django-project">
+      <created>1621844008949</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1621844008949</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,6 +258,9 @@
     <MESSAGE value="Наполнил бд по новому формату" />
     <MESSAGE value="Поправил офрагарфию" />
     <MESSAGE value="Заново создал столбцы в бд" />
-    <option name="LAST_COMMIT_MESSAGE" value="Заново создал столбцы в бд" />
+    <MESSAGE value="Заполнил бд по новому формату" />
+    <MESSAGE value="Начал разработку фильтра совместимости" />
+    <MESSAGE value="Перенёс бд в django-project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Перенёс бд в django-project" />
   </component>
 </project>
