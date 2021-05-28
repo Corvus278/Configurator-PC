@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect, reverse
-from django.views.generic import ListView, CreateView
 from .SQLfunctions import getListFromTable, getFromTable
 from .partClass import PartClass
 from icecream import ic
@@ -13,16 +12,17 @@ def homePage(request):
         "ram": "Оперативная память",
         "storage": "Накопитель",
         "power_supply": "Блок питания",
-        "case": "Корпус",
+        "case_": "Корпус",
         "cooler": "Охлаждение процессора",
         "fan": "Корпусные вентиляторы",
     }
-    return render(request, "index.html", {"partTypes":partTypes.items()})
+    return render(request, "index.html", {"partTypes": partTypes.items()})
 
 def part_list(request, partType):
     CPUDictList = getListFromTable(partType)
     partsSQL = [ PartClass(part) for part in CPUDictList]
     return render(request, "part_list.html", {"parts": partsSQL, "partType": partType})
+
 
 def addToBasket(request, partType, id):
     ansDict = getFromTable(id, partType)
@@ -35,11 +35,13 @@ def addToBasket(request, partType, id):
     ic(request.session['parts'])
     return redirect(reverse('part_list')+partType)
 
+
 def deleteFromBasket(request, partType, id):
     del request.session['parts'][partType]
     request.session.modified = True
     ic(request.session['parts'])
     return redirect('basket')
+
 
 def basket(request):
     partsBasket = request.session['parts']
