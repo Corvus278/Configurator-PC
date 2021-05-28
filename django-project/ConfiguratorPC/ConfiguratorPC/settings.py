@@ -15,6 +15,17 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+PART_TYPES = {
+    "motherboard": "Материнская плата",
+    "cpu": "Процессор",
+    "gpu": "Видеокарта",
+    "ram": "Оперативная память",
+    "storage": "Накопитель",
+    "power_supply": "Блок питания",
+    "case_": "Корпус",
+    "cooler": "Охлаждение процессора",
+    "fan": "Корпусные вентиляторы",
+}
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
