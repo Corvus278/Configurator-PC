@@ -2,24 +2,16 @@ from django.shortcuts import render, redirect, reverse
 from .SQLfunctions import getListFromTable, getFromTable
 from .partClass import PartClass
 from icecream import ic
-
+from django.conf import settings
+from .check_compatibility import check_compatibility
 
 def homePage(request):
-    partTypes = {
-        "motherboard": "Материнская плата",
-        "cpu": "Процессор",
-        "gpu": "Видеокарта",
-        "ram": "Оперативная память",
-        "storage": "Накопитель",
-        "power_supply": "Блок питания",
-        "case_": "Корпус",
-        "cooler": "Охлаждение процессора",
-        "fan": "Корпусные вентиляторы",
-    }
+    partTypes = settings.PART_TYPES
     return render(request, "index.html", {"partTypes": partTypes.items()})
 
 def part_list(request, partType):
-    CPUDictList = getListFromTable(partType)
+    partsBasket = request.session['parts']
+    CPUDictList = check_compatibility(partType, partsBasket)
     partsSQL = [ PartClass(part) for part in CPUDictList]
     return render(request, "part_list.html", {"parts": partsSQL, "partType": partType})
 

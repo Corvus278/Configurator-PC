@@ -1,11 +1,21 @@
 from icecream import ic
-from SQLfunctions import getListFromTable
+from .SQLfunctions import getListFromTable
+from django.conf import settings
+from icecream import ic
 
+def defineDict(basket):
+    partTypes = settings.PART_TYPES
+    ic(partTypes)
+    for key, value in partTypes.items():
+        if key not in basket:
+            basket[key] = None
+    return basket
 
 def check_compatibility(table_name, basket):
     """Проверка на совместимость, возвращает список словарей"""
     parts = getListFromTable(table_name)
 
+    basket = defineDict(basket)
     # cpu
     if table_name == 'cpu':
         # Получение из корзины нужных комплектующих
