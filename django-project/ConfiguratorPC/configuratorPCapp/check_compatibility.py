@@ -43,8 +43,6 @@ def check_compatibility(table_name, basket):
 
     # gpu
     elif table_name == 'gpu':
-
-
         # Получение из корзины нужных комплектующих
         power_supply = basket.get('power_supply')
         case = basket.get('case')
