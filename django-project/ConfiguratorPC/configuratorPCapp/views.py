@@ -18,20 +18,21 @@ def part_list(request, partType):
 
 def addToBasket(request, partType, id):
     ansDict = getFromTable(id, partType)
+    partsBasket = request.session['parts']
+    partsInTable = check_compatibility(partType, partsBasket)
+    ic(partsInTable)
     if 'parts' not in request.session:
         request.session['parts'] = {}
 
-    ic(request.session['parts'])
+    request.session.set_expiry(0)
     request.session['parts'][partType] = ansDict
     request.session.modified = True
-    ic(request.session['parts'])
     return redirect(reverse('part_list')+partType)
 
 
 def deleteFromBasket(request, partType, id):
     del request.session['parts'][partType]
     request.session.modified = True
-    ic(request.session['parts'])
     return redirect('basket')
 
 

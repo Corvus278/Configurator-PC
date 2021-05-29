@@ -5,7 +5,6 @@ from icecream import ic
 
 def defineDict(basket):
     partTypes = settings.PART_TYPES
-    ic(partTypes)
     for key, value in partTypes.items():
         if key not in basket:
             basket[key] = None
