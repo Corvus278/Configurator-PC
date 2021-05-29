@@ -3,7 +3,7 @@ from .SQLfunctions import getListFromTable, getFromTable
 from .partClass import PartClass
 from icecream import ic
 from django.conf import settings
-from .check_compatibility import check_parts_list
+from .check_compatibility import check_parts_list, check_basket
 
 def homePage(request):
     partTypes = settings.PART_TYPES
@@ -43,10 +43,17 @@ def basket(request):
     if 'parts' not in request.session:
         request.session['parts'] = {}
     partsBasket = request.session['parts']
+    partsBasket = check_basket(partsBasket)
+    ic(partsBasket)
     for key, value in partsBasket.items():
         partsBasket[key] = PartClass(value)
     sum_price_min = sum([part.price_min for part in partsBasket.values()])
     sum_price_max = sum([part.price_max for part in partsBasket.values()])
     count = len(partsBasket)
-    return render(request, "basket.html", {"parts": partsBasket.items(), "sum_price_min": sum_price_min, "sum_price_max": sum_price_max, "count": count})
+    compatibilityAll = all([part.compatibility for part in partsBasket.values()])
+    return render(request, "basket.html", {"parts": partsBasket.items(),
+                                           "sum_price_min": sum_price_min,
+                                           "sum_price_max": sum_price_max,
+                                           "count": count,
+                                           "compatibilityAll": compatibilityAll})
 

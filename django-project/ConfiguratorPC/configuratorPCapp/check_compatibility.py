@@ -1,5 +1,5 @@
 from django.conf import settings
-
+from icecream import ic
 # Названия:
 """
 -----
@@ -12,6 +12,7 @@ set2_comp - установка флагов совместимости для о
 one - одна деталь
 list - список деталей
 dict - словарь деталей, по типу (аналогичен корзине)
+self - аргумент сравнивается с собой
 _____
 Постфикс:
 _ex - добавление списка несовместимых деталей к проверяемому компоненту
@@ -299,8 +300,11 @@ def set_comp_one2dict_ex(partFull1, partFullDict):
     for partType, partFull2 in partFullDict.items():
         if not check_comp_one2one(partFull1, partFull2):
             print(False)
+            ic(unComp.count(partFull2))
             if unComp.count(partFull2) == 0: # чтобы не повторялись
-                unComp.append(partFull2)
+                tempPart = partFull2.copy()
+                tempPart.pop("compatibility", None)
+                unComp.append(tempPart)
 
     partFull1["compatibility"] = (len(unComp) == 0)
     partFull1["unComp"] = unComp
@@ -329,5 +333,13 @@ def set_comp_list2dict_ex(partFullList, partFullDict):
         partFullList[i] = set_comp_one2dict_ex(partFullList[i], partFullDict)
     return partFullList
 
+def set_comp_dict2self_ex(partFullDict):
+    for partType, partFull in partFullDict.items():
+        partFullDict[partType] = set_comp_one2dict_ex(partFull,partFullDict)
+    return partFullDict
+
 def check_parts_list(partsList, basket):
     return set_comp_list2dict_ex(partsList, basket)
+
+def check_basket(basket):
+    return set_comp_dict2self_ex(basket)
