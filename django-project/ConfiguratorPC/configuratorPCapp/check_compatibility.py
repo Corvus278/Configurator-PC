@@ -1,5 +1,30 @@
 from django.conf import settings
 
+# Названия:
+"""
+-----
+Действие:
+check_comp - проверка совместимости для первого аргумента. Возврат True/False
+set_comp - установка флага совместимости в словарь детали(-ей) для первого аргумента
+set2_comp - установка флагов совместимости для обоих фргументов
+-----
+Типы данных:
+one - одна деталь
+list - список деталей
+dict - словарь деталей, по типу (аналогичен корзине)
+_____
+Постфикс:
+_ex - добавление списка несовместимых деталей к проверяемому компоненту
+_____
+Аргументы:
+partType - string, тип детали
+partDict - dict, словарь детали
+partFull - dict, словарь детали, содержищей поле 'type'
+partFullList - список из деталей partFull
+partFullDict/basketDict - словарь из деталей partFull, аналогичен корзине 
+_____
+"""
+
 def defineDict(basket):
     partTypes = settings.PART_TYPES
     for key, value in partTypes.items():
@@ -222,14 +247,14 @@ def check_comp_one2dict(partFull1, partFullDict):
     else:
         return True
 
-def set_comp_one2one(partFull1, partFull2):
+def set2_comp_one2one(partFull1, partFull2):
     """устанавливает 'compatibility' для обеих деталей"""
     res = check_comp_one2one(partFull1, partFull2)
     partFull1["compatibility"] = res
     partFull2["compatibility"] = res
     return partFull1, partFull2
 
-def set_comp_one2one_ex(partFull1, partFull2):
+def set2_comp_one2one_ex(partFull1, partFull2):
     """устанавливает 'compatibility' для обеих деталей
     а тажке поле 'unComp' типа set, в случае, если нет совместимости"""
     if check_comp_one2one(partFull1, partFull2):
