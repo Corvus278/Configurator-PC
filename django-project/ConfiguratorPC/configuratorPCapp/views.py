@@ -3,28 +3,31 @@ from .SQLfunctions import getListFromTable, getFromTable
 from .partClass import PartClass
 from icecream import ic
 from django.conf import settings
-from .check_compatibility import check_compatibility
+from .check_compatibility import check_parts_list
 
 def homePage(request):
     partTypes = settings.PART_TYPES
     return render(request, "index.html", {"partTypes": partTypes.items()})
 
 def part_list(request, partType):
+    if 'parts' not in request.session:
+        request.session['parts'] = {}
+        request.session.set_expiry(0)
     partsBasket = request.session['parts']
-    CPUDictList = check_compatibility(partType, partsBasket)
-    partsSQL = [ PartClass(part) for part in CPUDictList]
-    return render(request, "part_list.html", {"parts": partsSQL, "partType": partType})
+
+    partsDictList = getListFromTable(partType)
+    partsCompList = check_parts_list(partsDictList, partsBasket)
+    partsCompList.sort(key=lambda part: not part['compatibility'])
+    partsClasses = [ PartClass(part) for part in partsCompList]
+    return render(request, "part_list.html", {"parts": partsClasses, "partType": partType})
 
 
 def addToBasket(request, partType, id):
-    ansDict = getFromTable(id, partType)
-    partsBasket = request.session['parts']
-    partsInTable = check_compatibility(partType, partsBasket)
-    ic(partsInTable)
     if 'parts' not in request.session:
         request.session['parts'] = {}
+        request.session.set_expiry(0)
 
-    request.session.set_expiry(0)
+    ansDict = getFromTable(id, partType)
     request.session['parts'][partType] = ansDict
     request.session.modified = True
     return redirect(reverse('part_list')+partType)
@@ -37,6 +40,8 @@ def deleteFromBasket(request, partType, id):
 
 
 def basket(request):
+    if 'parts' not in request.session:
+        request.session['parts'] = {}
     partsBasket = request.session['parts']
     for key, value in partsBasket.items():
         partsBasket[key] = PartClass(value)

@@ -17,9 +17,11 @@ def getListFromTable(table):
     # перегнать в список словарей
     argNames = [description[0] for description in cursor.description]
     ansList = cursor.execute("SELECT * FROM "+table).fetchall()
-    dictList = [{argNames[i]: ans1[i] for i in range(len(argNames))} for ans1 in ansList]
+    listDict = [{argNames[i]: ans1[i] for i in range(len(argNames))} for ans1 in ansList]
+    for dict in listDict:
+        dict["type"] = table
     conn.close()
-    return dictList
+    return listDict
 
 
 def getFromTable(id, table):
@@ -27,5 +29,6 @@ def getFromTable(id, table):
     cursor = conn.cursor()
     ansCortage = cursor.execute("SELECT * FROM "+table+" WHERE id = ?", (id,)).fetchone()
     ansDict = cortage2dict(cursor, ansCortage)
+    ansDict["type"] = table
     conn.close()
     return ansDict

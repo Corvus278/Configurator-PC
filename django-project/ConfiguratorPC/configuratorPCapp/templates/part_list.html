@@ -116,6 +116,11 @@
                       {{ part.price_max }}р
                     </span>
                   </div>
+                  {% if part.compatibility %}
+                  Совместимо
+                  {% else %}
+                  Не совместимо
+                  {% endif %}
                   <button class="part__button-add">
                     <a class="add"  href="/add/{{partType}}/{{part.id}}">Добавить</a>
                   </button>
