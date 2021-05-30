@@ -90,37 +90,38 @@ def check_compatibility(first_part1, second_part1):
 
     # motherboard
     elif name1 == 'motherboard':
-            # with cpu
-            if name2 == 'cpu':
-                if part1.get('socket') != part2.get('socket'):
+        # with cpu
+        if name2 == 'cpu':
+            if part1.get('socket') != part2.get('socket'):
+                return False
+            if not(int(part2.get('generation')) <=
+                   int(part1.get('proc_list')[-1])):
+                return False
+        # with ram
+        elif name2 == 'ram':
+            if part1.get('ddr') != part2.get('ddr'):
+                return False
+            if int(part1.get('ram_frequency')) < int(part2.get('frequency')):
+                return False
+            if int(part1.get('ram_gb_count')) < int(part2.get('all_volume')):
+                return False
+            if int(part1.get('ram_count')) < int(part2.get('die_count')):
+                return False
+            if part1.get('ram_form') != part2.get('form'):
+                return False
+        # with case
+        elif name2 == 'case_':
+            if part1.get('form') != part2.get('form_motherboard'):
+                return False
+        # with storage
+        elif name2 == 'storage':
+            if part2.get('form') == 'm2':
+                if int(part1.get('m2_count')) == 0:
                     return False
-                if not (part2.get('generation') in part1.get('proc_list')):
-                    return False
-            # with ram
-            elif name2 == 'ram':
-                if part1.get('ddr') != part2.get('ddr'):
-                    return False
-                if int(part1.get('ram_frequency')) < int(part2.get('frequency')):
-                    return False
-                if int(part1.get('ram_gb_count')) < int(part2.get('all_volume')):
-                    return False
-                if int(part1.get('ram_count')) < int(part2.get('die_count')):
-                    return False
-                if part1.get('ram_form') != part2.get('form'):
-                    return False
-            # with case
-            elif name2 == 'case_':
-                if part1.get('form') != part2.get('form_motherboard'):
-                    return False
-            # with storage
-            elif name2 == 'storage':
-                if part2.get('form') == 'm2':
-                    if int(part1.get('m2_count')) == 0:
-                        return False
-            # with cooler
-            elif name2 == 'cooler':
-                if not(part1.get('socket') in part2.get('sockets')):
-                    return False
+        # with cooler
+        elif name2 == 'cooler':
+            if not(part1.get('socket') in part2.get('sockets')):
+                return False
 
     # power supply
     elif name1 == 'power_supply':
