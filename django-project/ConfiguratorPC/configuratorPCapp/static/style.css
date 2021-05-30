@@ -72,6 +72,7 @@ img {
   margin: 0px auto;
   color: var(--main-color);
   font-size: 43px;
+  transition: text-decoration 0.2s;
 }
 
 .basket-svg{
@@ -125,25 +126,11 @@ img {
   left: 0px;
 }
 
-/* Hover */
-.part-card:hover {
-  color: var(--main-color);
-  border-color: var(--main-color);
-}
-
-.basket__link:hover
-.basket-svg {
-  fill: var(--main-color);
-}
-
-.part__heading:hover {
-  color: var(--main-color);
-}
-
 /* part_list */
 .part_list {
   width: 600px;
   margin: 152px auto 0px;
+  margin-bottom: 70px;
   color: white;
 }
 
@@ -178,16 +165,18 @@ img {
   transition: color 0.2s;
 }
 
-.part__button-add {
+.part__button {
   width: 140px;
-  height: 30px;
+  height: 35px;
   margin-top: auto;
   margin-left: auto;
-  color: white;
-  border: none;
-  background-color: var(--main-color);
+  color: var(--main-color);
+  border: 0.3px solid var(--main-color);
+  background-color: #0D1117;
+  /* background-color: var(--main-color); */
   font-size: 18px;
   cursor: pointer;
+  transition: background-color 0.1s, color 0.1s;
 }
 
 /* basket */
@@ -216,6 +205,31 @@ img {
 
 .general-info:hover {
   border-color: var(--main-color);
+}
+
+
+/* Hover */
+.header__heading:hover {
+  text-decoration: underline;
+}
+
+.part-card:hover {
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.basket__link:hover
+.basket-svg {
+  fill: var(--main-color);
+}
+
+.part__heading:hover {
+  color: var(--main-color);
+}
+
+.part__button:hover {
+  background-color: var(--main-color);
+  color: white;
 }
 
 @media (max-width: 1849px) {

@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="80e7000b-bcc0-4101-ae10-ff636059fdbd" name="Default Changelist" comment="Маленькие правки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/templates/basket.html" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/templates/basket.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/templates/part_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/templates/part_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py/db/parts.db" beforeDir="false" afterPath="$PROJECT_DIR$/py/db/parts.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py/tests/compatibility/compatibiluty.py" beforeDir="false" afterPath="$PROJECT_DIR$/py/tests/compatibility/compatibiluty.py" afterDir="false" />
     </list>
     <list id="f5a0a8c0-b52e-489b-90d9-1aa988d8c3b7" name="Заново создал столбцы в бд" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,16 +41,38 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/django-project/ConfiguratorPC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/py/tests/compatibility" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Документы\Configurator-PC\py\tests\compatibility" />
       <recent name="F:\Документы\Configurator-PC\django-project\ConfiguratorPC" />
       <recent name="F:\Документы\Configurator-PC\py\db" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.scratch">
+  <component name="RunManager" selected="Python.compatibiluty">
+    <configuration name="compatibiluty" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Configurator-PC" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/py/tests/compatibility" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/py/tests/compatibility/compatibiluty.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="filler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Configurator-PC" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -65,27 +86,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/py/db/filler.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="parts_list" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Configurator-PC" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/py/db" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/py/db/parts_list.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -159,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.compatibiluty" />
         <item itemvalue="Python.scratch" />
         <item itemvalue="Python.test__check_compatibility" />
         <item itemvalue="Python.filler" />
         <item itemvalue="Python.scratch_1" />
-        <item itemvalue="Python.parts_list" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622369152760</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Маленькие правки">
+      <created>1622385999844</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1622385999844</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

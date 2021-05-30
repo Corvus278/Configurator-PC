@@ -65,14 +65,19 @@ def check_compatibility(first_part1, second_part1):
     elif name1 == 'ram':
         if name2 == 'motherboard':
             if part1.get('die_count') != part2.get('ram_count'):
+                ic(1)
                 return False
             if part1.get('ddr') != part2.get('ddr'):
+                ic(2)
                 return False
             if int(part1.get('all_volume')) > int(part2.get('ram_gb_count')):
+                ic(3)
                 return False
             if int(part1.get('frequency')) > int(part2.get('ram_frequency')):
+                ic(4)
                 return False
             if part1.get('form') != part2.get('form'):
+                ic(5)
                 return False
 
     # motherboard

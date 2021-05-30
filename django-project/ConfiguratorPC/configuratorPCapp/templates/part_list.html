@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Конфигуратор PC</title>
-   {% load static %}
+  {% load static %}
   <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
@@ -96,37 +96,37 @@
       <div class="container">
         <ul class="part_list">
           {% for part in parts %}
-            <li class="part">
-              <div class="part__wrapper">
-                <div class="part__left">
-                  <img class="part__img" src="{{part.img}}" alt="Картинка для примера">
-                </div>
-                <div class="part__right">
-                  <h3 class="part__heading">
-                    <a href="{{part.url}}" target="_blank">{{ part.name }}</a>
-                  </h3>
-                  <div class="part__price-wrapper">
-                    <span class="part__price-min">
-                      {{ part.price_min }}р
-                    </span>
-                    <span>
-                      -
-                    </span>
-                    <span class="part__price-max">
-                      {{ part.price_max }}р
-                    </span>
-                  </div>
-                  {% if part.compatibility %}
-                  Совместимо
-                  {% else %}
-                  Не совместимо
-                  {% endif %}
-                  <button class="part__button-add" onclick="window.location.href = '/add/{{partType}}/{{part.id}}';">
-                    Добавить
-                  </button>
-                </div>
+          <li class="part">
+            <div class="part__wrapper">
+              <div class="part__left">
+                <img class="part__img" src="{{part.img}}" alt="Картинка для примера">
               </div>
-            </li>
+              <div class="part__right">
+                <h3 class="part__heading">
+                  <a href="{{part.url}}" target="_blank">{{ part.name }}</a>
+                </h3>
+                <div class="part__price-wrapper">
+                  <span class="part__price-min">
+                    {{ part.price_min }}р
+                  </span>
+                  <span>
+                    -
+                  </span>
+                  <span class="part__price-max">
+                    {{ part.price_max }}р
+                  </span>
+                </div>
+                {% if part.compatibility %}
+                Совместимо
+                {% else %}
+                Не совместимо
+                {% endif %}
+                <button class="part__button" onclick="window.location.href = '/add/{{partType}}/{{part.id}}';">
+                  Добавить
+                </button>
+              </div>
+            </div>
+          </li>
           {% endfor %}
         </ul>
       </div>
