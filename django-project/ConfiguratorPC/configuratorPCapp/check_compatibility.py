@@ -163,7 +163,7 @@ def check_compatibility(first_part1, second_part1):
                 return False
 
     # case_
-    elif name1 == 'case__':
+    elif name1 == 'case_':
         # with motherboard
         if name2 == 'motherboard':
             if part1.get('form_motherboard') != part2.get('form'):
@@ -181,9 +181,10 @@ def check_compatibility(first_part1, second_part1):
             if part1.get('power_supply') == '':
                 if part1.get('form__power_supply') != part2.get('form'):
                     return False
-                if int(part1.get('weight_power_supply')) < \
-                   int(part2.get('weight')):
-                    return False
+                if part1.get('weight_power_supply').isdigit():
+                    if int(part1.get('weight_power_supply')) < \
+                       int(part2.get('weight')):
+                        return False
             else:
                  return False
         # with fan (Временное решение)
