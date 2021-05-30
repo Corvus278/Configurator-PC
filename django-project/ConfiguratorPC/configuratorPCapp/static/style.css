@@ -114,6 +114,7 @@ img {
 .part-card__heading {
   font-weight: normal;
   font-size: 24px;
+  transition: color 0.2s;
 }
 
 .part-card__link::before {
@@ -134,6 +135,10 @@ img {
 .basket__link:hover
 .basket-svg {
   fill: var(--main-color);
+}
+
+.part-card__heading {
+  color: var(--main-color);
 }
 
 /* part_list */

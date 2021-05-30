@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80e7000b-bcc0-4101-ae10-ff636059fdbd" name="Default Changelist" comment="Переделал функцию провеки на совместимость">
+    <list default="true" id="80e7000b-bcc0-4101-ae10-ff636059fdbd" name="Default Changelist" comment="Маленькие правки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/check_compatibility.py" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/check_compatibility.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/templates/basket.html" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/templates/basket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/templates/part_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/templates/part_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/db.sqlite3" afterDir="false" />
     </list>
     <list id="f5a0a8c0-b52e-489b-90d9-1aa988d8c3b7" name="Заново создал столбцы в бд" comment="" />
@@ -259,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622286350759</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Маленькие правки">
+      <created>1622369152760</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1622369152760</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -285,6 +294,7 @@
     <MESSAGE value="Перенёс бд в django-project" />
     <MESSAGE value="Добавил букву &quot;р&quot; к цене" />
     <MESSAGE value="Переделал функцию провеки на совместимость" />
-    <option name="LAST_COMMIT_MESSAGE" value="Переделал функцию провеки на совместимость" />
+    <MESSAGE value="Маленькие правки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Маленькие правки" />
   </component>
 </project>
