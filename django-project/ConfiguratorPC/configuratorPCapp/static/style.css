@@ -114,7 +114,6 @@ img {
 .part-card__heading {
   font-weight: normal;
   font-size: 24px;
-  transition: color 0.2s;
 }
 
 .part-card__link::before {
@@ -137,7 +136,7 @@ img {
   fill: var(--main-color);
 }
 
-.part-card__heading {
+.part__heading:hover {
   color: var(--main-color);
 }
 
@@ -176,6 +175,7 @@ img {
 .part__heading {
   margin-bottom: 10px;
   text-decoration: underline;
+  transition: color 0.2s;
 }
 
 .part__button-add {
