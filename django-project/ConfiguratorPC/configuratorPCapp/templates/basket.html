@@ -117,6 +117,10 @@
                     {{ part.price_max }}р
                   </span>
                 </div>
+
+                {{ part.compatibility }}
+                {{ part.unComp }}
+
                 <button class="part__button-add">
                   <a class="add" href="delete/{{partType}}/{{part.id}}/">Удалить</a>
                 </button>
@@ -170,7 +174,11 @@
               </label>
               <p class="general-info-item__value general-info-item__value--general-compatibility"
                 id="general-compatibility">
+                {% if compatibilityAll %}
                 Все комплектующие совместимы
+                {% else %}
+                Есть несовместимые комплектующие
+                {% endif %}
               </p>
             </li>
           </ul>
