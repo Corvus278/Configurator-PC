@@ -72,7 +72,7 @@ def check_compatibility(first_part1, second_part1):
                                         'connectors_pci_e_8__count')) - 1))
         elif name2 == 'case_':
             if int(part1.get('length')) >= int(part2.get('gpu_length_max')):
-                 return False
+                return False
 
     # ram
     elif name1 == 'ram':
@@ -81,7 +81,7 @@ def check_compatibility(first_part1, second_part1):
                 return False
             if part1.get('ddr') != part2.get('ddr'):
                 return False
-            if part1.get('all_volume') > part2.get('ram_gb_count'):
+            if int(part1.get('all_volume')) > int(part2.get('ram_gb_count')):
                 return False
             if int(part1.get('frequency')) > int(part2.get('ram_frequency')):
                 return False
@@ -206,24 +206,28 @@ def check_compatibility(first_part1, second_part1):
                 return False
     return True
 
+
 def check_comp_one2one(partType1, partDict1, partType2, partDict2):
     """Перегрузка оригинальной функции с другими аргументами"""
     return check_compatibility((partType1, partDict1), (partType2, partDict2))
+
 
 def check_comp_one2one(partFull1, partFull2):
     """Перегрузка оригинальной функции с другими аргументами
     partDictFull - словарь копмлектующей, дополненный полем 'type'"""
     return check_compatibility((partFull1["type"], partFull1), (partFull2["type"], partFull2))
 
+
 def check_comp_one2list(partType1, partDict1, partType2, partListDict2):
     """Проверка на совместимость partDict1 со ВСЕМИ комплектующими из списка partListDict2
     Возвращает True/False, значения комплектующих не меняются"""
 
     for partDict2 in partListDict2:
-        if not check_comp_one2one(partType1,partDict1,partType2,partDict2):
+        if not check_comp_one2one(partType1, partDict1, partType2, partDict2):
             return False
     else:
         return True
+
 
 def check_comp_one2list(partFull1, partFullList):
     for partFullDict2 in partFullList:
@@ -231,6 +235,7 @@ def check_comp_one2list(partFull1, partFullList):
             return False
     else:
         return True
+
 
 def check_comp_one2dict(partType1, partDict1, basketDict):
     """Проверка одной детали на совместимость с собранной корзиной"""
@@ -240,6 +245,7 @@ def check_comp_one2dict(partType1, partDict1, basketDict):
     else:
         return True
 
+
 def check_comp_one2dict(partFull1, partFullDict):
     """Проверка одной детали на совместимость с собранной корзиной"""
     for partType, partFull2 in partFullDict.items():
@@ -248,12 +254,14 @@ def check_comp_one2dict(partFull1, partFullDict):
     else:
         return True
 
+
 def set2_comp_one2one(partFull1, partFull2):
     """устанавливает 'compatibility' для обеих деталей"""
     res = check_comp_one2one(partFull1, partFull2)
     partFull1["compatibility"] = res
     partFull2["compatibility"] = res
     return partFull1, partFull2
+
 
 def set2_comp_one2one_ex(partFull1, partFull2):
     """устанавливает 'compatibility' для обеих деталей
@@ -270,10 +278,12 @@ def set2_comp_one2one_ex(partFull1, partFull2):
         partFull2["unComp"] = [partFull1]
     return partFull1, partFull2
 
+
 def set_comp_one2list(partFull1, partFullList):
     """устанавливает поле compatibility для partFull1 (не для списка)"""
     partFull1["compatibility"] = check_comp_one2list(partFull1, partFullList)
     return partFull1
+
 
 def set_comp_one2list_ex(partFull1, partFullList):
     """устанавливает поле compatibility для partFull1
@@ -281,17 +291,19 @@ def set_comp_one2list_ex(partFull1, partFullList):
     unComp = []
     for partFull2 in partFullList:
         if not check_comp_one2one(partFull1, partFull2):
-            if unComp.count(partFull2) == 0: # чтобы не повторялись
+            if unComp.count(partFull2) == 0:    # чтобы не повторялись
                 unComp.append(partFull2)
 
     partFull1["compatibility"] = (len(unComp) == 0)
     partFull1["unComp"] = unComp
     return partFull1
 
+
 def set_comp_one2dict(partFull1, partFullDict):
     """устанавливает поле compatibility для partFull1 (не для словаря)"""
     partFull1["compatibility"] = check_comp_one2dict(partFull1, partFullDict)
     return partFull1
+
 
 def set_comp_one2dict_ex(partFull1, partFullDict):
     """устанавливает поле compatibility для partFull1
@@ -310,14 +322,18 @@ def set_comp_one2dict_ex(partFull1, partFullDict):
     partFull1["unComp"] = unComp
     return partFull1
 
+
 def set_comp_list2list_ex(partFullList1, partFullList2):
-    """проверяет и устанавливает совместимость и список несовместимых элементов для ПЕРВОГО списка """
+    """проверяет и устанавливает совместимость и список несовместимых элементов
+     для ПЕРВОГО списка """
     for i in range(len(partFullList1)):
-        partFullList1[i] = set_comp_one2list_ex(partFullList2,partFullList1[i])
+        partFullList1[i] = set_comp_one2list_ex(partFullList2, partFullList1[i])
     return partFullList1
 
+
 def set2_comp_list2list_ex(partFullList1, partFullList2):
-    """проверяет и устанавливает совместимость и список несовместимых элементов 'каждого с каждым' """
+    """проверяет и устанавливает совместимость и список несовместимых элементов
+     'каждого с каждым' """
     oldList2 = partFullList2.copy()
     for i in range(len(partFullList2)):
         partFullList2[i] = set_comp_one2list_ex(partFullList1,partFullList2[i])
@@ -327,19 +343,24 @@ def set2_comp_list2list_ex(partFullList1, partFullList2):
 
     return partFullList1, partFullList2
 
+
 def set_comp_list2dict_ex(partFullList, partFullDict):
-    """проверяет и устанавливает совместимость и список несовместимых элементов для списка """
+    """проверяет и устанавливает совместимость и список несовместимых элементов
+     для списка """
     for i in range(len(partFullList)):
         partFullList[i] = set_comp_one2dict_ex(partFullList[i], partFullDict)
     return partFullList
 
+
 def set_comp_dict2self_ex(partFullDict):
     for partType, partFull in partFullDict.items():
-        partFullDict[partType] = set_comp_one2dict_ex(partFull,partFullDict)
+        partFullDict[partType] = set_comp_one2dict_ex(partFull, partFullDict)
     return partFullDict
+
 
 def check_parts_list(partsList, basket):
     return set_comp_list2dict_ex(partsList, basket)
+
 
 def check_basket(basket):
     return set_comp_dict2self_ex(basket)
