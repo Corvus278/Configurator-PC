@@ -1,29 +1,5 @@
+from icecream import ic
 from django.conf import settings
-
-# Названия:
-"""
------
-Действие:
-check_comp - проверка совместимости для первого аргумента. Возврат True/False
-set_comp - установка флага совместимости в словарь детали(-ей) для первого аргумента
-set2_comp - установка флагов совместимости для обоих фргументов
------
-Типы данных:
-one - одна деталь
-list - список деталей
-dict - словарь деталей, по типу (аналогичен корзине)
-_____
-Постфикс:
-_ex - добавление списка несовместимых деталей к проверяемому компоненту
-_____
-Аргументы:
-partType - string, тип детали
-partDict - dict, словарь детали
-partFull - dict, словарь детали, содержищей поле 'type'
-partFullList - список из деталей partFull
-partFullDict/basketDict - словарь из деталей partFull, аналогичен корзине 
-_____
-"""
 
 def defineDict(basket):
     partTypes = settings.PART_TYPES
@@ -89,37 +65,39 @@ def check_compatibility(first_part1, second_part1):
 
     # motherboard
     elif name1 == 'motherboard':
-            # with cpu
-            if name2 == 'cpu':
-                if part1.get('socket') != part2.get('socket'):
+        # with cpu
+        if name2 == 'cpu':
+            if part1.get('socket') != part2.get('socket'):
+                return False
+            if not (part2.get('generation') in part1.get('proc_list')):
+                ic(part1.get('generation'))
+                ic(part2.get('proc_list'))
+                return False
+        # with ram
+        elif name2 == 'ram':
+            if part1.get('ddr') != part2.get('ddr'):
+                return False
+            if int(part1.get('ram_frequency')) < int(part2.get('frequency')):
+                return False
+            if int(part1.get('ram_gb_count')) < int(part2.get('all_volume')):
+                return False
+            if int(part1.get('ram_count')) < int(part2.get('die_count')):
+                return False
+            if part1.get('ram_form') != part2.get('form'):
+                return False
+        # with case
+        elif name2 == 'case_':
+            if part1.get('form') != part2.get('form_motherboard'):
+                return False
+        # with storage
+        elif name2 == 'storage':
+            if part2.get('form') == 'm2':
+                if int(part1.get('m2_count')) == 0:
                     return False
-                if not (part2.get('generation') in part1.get('proc_list')):
-                    return False
-            # with ram
-            elif name2 == 'ram':
-                if part1.get('ddr') != part2.get('ddr'):
-                    return False
-                if int(part1.get('ram_frequency')) < int(part2.get('frequency')):
-                    return False
-                if int(part1.get('ram_gb_count')) < int(part2.get('all_volume')):
-                    return False
-                if int(part1.get('ram_count')) < int(part2.get('die_count')):
-                    return False
-                if part1.get('ram_form') != part2.get('form'):
-                    return False
-            # with case
-            elif name2 == 'case_':
-                if part1.get('form') != part2.get('form_motherboard'):
-                    return False
-            # with storage
-            elif name2 == 'storage':
-                if part2.get('form') == 'm2':
-                    if int(part1.get('m2_count')) == 0:
-                        return False
-            # with cooler
-            elif name2 == 'cooler':
-                if not(part1.get('socket') in part2.get('sockets')):
-                    return False
+        # with cooler
+        elif name2 == 'cooler':
+            if not(part1.get('socket') in part2.get('sockets')):
+                return False
 
     # power supply
     elif name1 == 'power_supply':
@@ -247,6 +225,7 @@ def check_comp_one2dict(partFull1, partFullDict):
     else:
         return True
 
+
 def set2_comp_one2one(partFull1, partFull2):
     """устанавливает 'compatibility' для обеих деталей"""
     res = check_comp_one2one(partFull1, partFull2)
@@ -254,7 +233,8 @@ def set2_comp_one2one(partFull1, partFull2):
     partFull2["compatibility"] = res
     return partFull1, partFull2
 
-def set2_comp_one2one_ex(partFull1, partFull2):
+
+def set_comp_one2one_ex(partFull1, partFull2):
     """устанавливает 'compatibility' для обеих деталей
     а тажке поле 'unComp' типа set, в случае, если нет совместимости"""
     if check_comp_one2one(partFull1, partFull2):

@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80e7000b-bcc0-4101-ae10-ff636059fdbd" name="Default Changelist" comment="Перенёс бд в django-project">
+    <list default="true" id="80e7000b-bcc0-4101-ae10-ff636059fdbd" name="Default Changelist" comment="Переделал функцию провеки на совместимость">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/check_compatibility.py" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/check_compatibility.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/py/db/filler.py" beforeDir="false" afterPath="$PROJECT_DIR$/py/db/filler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/templates/basket.html" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/templates/basket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
     </list>
     <list id="f5a0a8c0-b52e-489b-90d9-1aa988d8c3b7" name="Заново создал столбцы в бд" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +45,7 @@
       <recent name="F:\Документы\Configurator-PC\py\db" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test__check_compatibility">
+  <component name="RunManager" selected="Python.scratch">
     <configuration name="filler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Configurator-PC" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -149,8 +153,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test__check_compatibility" />
         <item itemvalue="Python.scratch" />
+        <item itemvalue="Python.test__check_compatibility" />
         <item itemvalue="Python.filler" />
         <item itemvalue="Python.scratch_1" />
         <item itemvalue="Python.parts_list" />
@@ -237,7 +241,21 @@
       <option name="project" value="LOCAL" />
       <updated>1621844008949</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Добавил букву &quot;р&quot; к цене">
+      <created>1622277818818</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1622277818818</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Переделал функцию провеки на совместимость">
+      <created>1622286350759</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1622286350759</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -261,6 +279,8 @@
     <MESSAGE value="Заполнил бд по новому формату" />
     <MESSAGE value="Начал разработку фильтра совместимости" />
     <MESSAGE value="Перенёс бд в django-project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Перенёс бд в django-project" />
+    <MESSAGE value="Добавил букву &quot;р&quot; к цене" />
+    <MESSAGE value="Переделал функцию провеки на совместимость" />
+    <option name="LAST_COMMIT_MESSAGE" value="Переделал функцию провеки на совместимость" />
   </component>
 </project>

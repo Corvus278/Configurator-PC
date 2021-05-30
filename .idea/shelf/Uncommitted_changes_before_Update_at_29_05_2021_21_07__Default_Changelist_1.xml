@@ -1,0 +1,9 @@
+<changelist name="Uncommitted_changes_before_Update_at_29_05_2021_21_07_[Default_Changelist]1" date="1622311664992" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_05_2021_21_07_[Default_Changelist]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 29.05.2021 21:07 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="django-project/ConfiguratorPC/db.sqlite3" />
+    <option name="AFTER_PATH" value="django-project/ConfiguratorPC/db.sqlite3" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_05_2021_21_07_[Default_Changelist]1/db.sqlite3" />
+  </binary>
+</changelist>

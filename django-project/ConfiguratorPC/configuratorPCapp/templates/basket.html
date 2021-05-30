@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Корзина - Конфигуратор PC</title>
-   {% load static %}
+  {% load static %}
   <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
@@ -118,14 +118,14 @@
                   </span>
                 </div>
                 <button class="part__button-add">
-                  <a class="add"  href="delete/{{partType}}/{{part.id}}/">Удалить</a>
+                  <a class="add" href="delete/{{partType}}/{{part.id}}/">Удалить</a>
                 </button>
               </div>
             </div>
           </li>
           {% endfor %}
           {% else %}
-            Ваша корзина ещё пуста? Советуем срочно это исправить!
+          Ваша корзина ещё пуста? Советуем срочно это исправить!
           {% endif %}
         </ul>
       </div>

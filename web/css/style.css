@@ -136,6 +136,14 @@ img {
   fill: var(--main-color);
 }
 
+.general-info:hover {
+  border-color: var(--main-color);
+}
+
+.part__heading:hover {
+  color: var(--main-color);
+}
+
 /* part_list */
 .part_list {
   width: 600px;
@@ -170,6 +178,8 @@ img {
 
 .part__heading {
   margin-bottom: 10px;
+  text-decoration: underline;
+  transition: color 0.2s;
 }
 
 .part__button-add {
@@ -208,9 +218,6 @@ img {
   color: white;
 }
 
-.general-info:hover {
-  border-color: var(--main-color);
-}
 
 @media (max-width: 1849px) {
   .genaral-info__container {

@@ -170,6 +170,7 @@ img {
 
 .part__heading {
   margin-bottom: 10px;
+  text-decoration: underline;
 }
 
 .part__button-add {
