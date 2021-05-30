@@ -121,8 +121,8 @@
                   {% else %}
                   Не совместимо
                   {% endif %}
-                  <button class="part__button-add">
-                    <a class="add"  href="/add/{{partType}}/{{part.id}}">Добавить</a>
+                  <button class="part__button-add" onclick="window.location.href = '/add/{{partType}}/{{part.id}}';">
+                    Добавить
                   </button>
                 </div>
               </div>
