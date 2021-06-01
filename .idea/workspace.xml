@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="80e7000b-bcc0-4101-ae10-ff636059fdbd" name="Default Changelist" comment="Маленькие правки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/check_compatibility.py" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/configuratorPCapp/check_compatibility.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-project/ConfiguratorPC/start.bat" beforeDir="false" afterPath="$PROJECT_DIR$/django-project/ConfiguratorPC/start.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/py/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/py/db/parts.db" beforeDir="false" afterPath="$PROJECT_DIR$/py/db/parts.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/py/tests/compatibility/compatibiluty.py" beforeDir="false" afterPath="$PROJECT_DIR$/py/tests/compatibility/compatibiluty.py" afterDir="false" />
     </list>
     <list id="f5a0a8c0-b52e-489b-90d9-1aa988d8c3b7" name="Заново создал столбцы в бд" comment="" />
     <option name="SHOW_DIALOG" value="false" />
