@@ -181,12 +181,12 @@ def check_compatibility(first_part1, second_part1):
             if part1.get('power_supply') == '':
                 if part1.get('form__power_supply') != part2.get('form'):
                     return False
-                if part1.get('weight_power_supply').isdigit():
-                    if int(part1.get('weight_power_supply')) < \
-                       int(part2.get('weight')):
-                        return False
+                # if part1.get('weight_power_supply').isdigit():
+                #     if int(part1.get('weight_power_supply')) < \
+                #        int(part2.get('weight')):
+                #         return False
             else:
-                 return False
+                return False
         # with fan (Временное решение)
         elif name2 == 'part2':
             one_form = part1.get('part2s_front_count').split('/')[0]
