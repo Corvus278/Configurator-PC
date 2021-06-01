@@ -1,0 +1,34 @@
+import sqlite3
+from django.conf import settings
+
+
+def cortage2dict(cursor, cortage):
+    argNames = [description[0] for description in cursor.description]
+    return {argNames[i]: cortage[i] for i in range(len(argNames))}
+
+
+def getListFromTable(table):
+    dbName = settings.DATABASES["parts"]["NAME"]
+    conn = sqlite3.connect(dbName)
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM "+table)
+
+    # перегнать в список словарей
+    argNames = [description[0] for description in cursor.description]
+    ansList = cursor.execute("SELECT * FROM "+table).fetchall()
+    listDict = [{argNames[i]: ans1[i] for i in range(len(argNames))} for ans1 in ansList]
+    for dict in listDict:
+        dict["type"] = table
+    conn.close()
+    return listDict
+
+
+def getFromTable(id, table):
+    conn = sqlite3.connect(settings.DATABASES["parts"]["NAME"])
+    cursor = conn.cursor()
+    ansCortage = cursor.execute("SELECT * FROM "+table+" WHERE id = ?", (id,)).fetchone()
+    ansDict = cortage2dict(cursor, ansCortage)
+    ansDict["type"] = table
+    conn.close()
+    return ansDict

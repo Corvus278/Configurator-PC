@@ -7,15 +7,18 @@ class Motherboard:
         self.name = name
         self.img = img
         self.url = url
-        self.price_min = price_min
-        self.price_max = price_max
+        self.price_min = int(price_min)
+        if price_max == '':
+            self.price_max = price_min
+        else:
+            self.price_max = int(price_max)
         self.form = form
         self.socket = socket
         self.proc_list = proc_list
         self.pins = pins
         self.m2_count = m2_count
         self.m2_interface = m2_interface
-        self.stata_count = sata_count
+        self.sata_count = sata_count
         # self.fan_connector_type = fan_connector_type
         self.fan_connector_count = fan_connector_count
         self.ram_form = ram_form
@@ -31,8 +34,11 @@ class CPU:
         self.name = name
         self.img = img
         self.url = url
-        self.price_min = price_min
-        self.price_max = price_max
+        self.price_min = int(price_min)
+        if price_max == '':
+            self.price_max = price_min
+        else:
+            self.price_max = int(price_max)
         self.socket = socket
         self.line = line
         self.generation = generation
@@ -44,8 +50,11 @@ class GPU:
         self.name = name
         self.img = img
         self.url = url
-        self.price_min = price_min
-        self.price_max = price_max
+        self.price_min = int(price_min)
+        if price_max == '':
+            self.price_max = price_min
+        else:
+            self.price_max = int(price_max)
         self.slot = slot
         self.pins = pins
         self.length = length
@@ -57,8 +66,11 @@ class PowerSupply:
         self.name = name
         self.img = img
         self.url = url
-        self.price_min = price_min
-        self.price_max = price_max
+        self.price_min = int(price_min)
+        if price_max == '':
+            self.price_max = price_min
+        else:
+            self.price_max = int(price_max)
         self.form = form
         self.connectors_pci_e_8__count = connectors_pci_e_8__count
         self.connectors_sata_count = connectors_sata_count
@@ -73,8 +85,11 @@ class Case:
         self.name = name
         self.img = img
         self.url = url
-        self.price_min = price_min
-        self.price_max = price_max
+        self.price_min = int(price_min)
+        if price_max == '':
+            self.price_max = price_min
+        else:
+            self.price_max = int(price_max)
         self.form_motherboard = form_motherboard
         self.power_supply = power_supply
         self.form__power_supply = form__power_supply
@@ -96,12 +111,16 @@ class Storage:
         self.name = name
         self.img = img
         self.url = url
-        self.price_min = price_min
-        self.price_max = price_max
+        self.price_min = int(price_min)
+        if price_max == '':
+            self.price_max = price_min
+        else:
+            self.price_max = int(price_max)
         self.form = form
         self.connector = connector
         self.m2_form = m2_form
         self.m2_interface = m2_interface
+
 
 class RAM:
     def __init__(self, name, img, url, price_min, price_max, die_count, ddr,
@@ -109,8 +128,11 @@ class RAM:
         self.name = name
         self.img = img
         self.url = url
-        self.price_min = price_min
-        self.price_max = price_max
+        self.price_min = int(price_min)
+        if price_max == '':
+            self.price_max = price_min
+        else:
+            self.price_max = int(price_max)
         self.die_count = die_count
         self.ddr = ddr
         self.all_volume = all_volume
@@ -124,8 +146,11 @@ class Cooler:
         self.name = name
         self.img = img
         self.url = url
-        self.price_min = price_min
-        self.price_max = price_max
+        self.price_min = int(price_min)
+        if price_max == '':
+            self.price_max = price_min
+        else:
+            self.price_max = int(price_max)
         self.sockets = sockets
         self.height = height
         self.width = width
@@ -136,8 +161,11 @@ class WCS:
         self.name = name
         self.img = img
         self.url = url
-        self.price_min = price_min
-        self.price_max = price_max
+        self.price_min = int(price_min)
+        if price_max == '':
+            self.price_max = price_min
+        else:
+            self.price_max = int(price_max)
         self.sockets = sockets
 
 
@@ -147,8 +175,11 @@ class Fan:
         self.name = name
         self.img = img
         self.url = url
-        self.price_min = price_min
-        self.price_max = price_max
+        self.price_min = int(price_min)
+        if price_max == '':
+            self.price_max = price_min
+        else:
+            self.price_max = int(price_max)
         self.weight = weight
         self.pins = pins
         self.count = count

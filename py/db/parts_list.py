@@ -1,11 +1,10 @@
-import json
 import parts_classes as pc
 
 
-def json_transform(parts_list):
+def obj2dict(parts_list):
     new_list = []
-    for cortege_part in parts_list:
-        new_list.append(json.dumps(cortege_part.__dict__))
+    for part in parts_list:
+        new_list.append(part.__dict__)
     return new_list
 
 
@@ -60,8 +59,8 @@ cpu = [
             'https://www.e-katalog.ru/INTEL-I9-10900F-BOX.htm',
             '27850', '37290', 'Intel LGA 1200', 'Core i9', '10')),
     (pc.CPU('AMD Ryzen 9 Vermeer 5900X OEM',
-            'https://www.e-katalog.ru/AMD-5900X-OEM.htm',
             'https://www.e-katalog.ru/jpg/1884974.jpg',
+            'https://www.e-katalog.ru/AMD-5900X-OEM.htm',
             '45517', '57366', 'AMD AM4', 'Ryzen 9', '5')),
     (pc.CPU('Intel Core i7 Comet Lake i7-10700 OEM',
             'https://www.e-katalog.ru/jpg/1789394.jpg',
@@ -403,12 +402,12 @@ cases = [
 ]
 
 
-motherboards = json_transform(motherboards)
-cases = json_transform(cases)
-cpu = json_transform(cpu)
-gpu = json_transform(gpu)
-ram = json_transform(ram)
-power_supplies = json_transform(power_supplies)
-storage = json_transform(storage)
-coolers = json_transform(coolers)
-fans = json_transform(fans)
+motherboards = obj2dict(motherboards)
+cases = obj2dict(cases)
+cpu = obj2dict(cpu)
+gpu = obj2dict(gpu)
+ram = obj2dict(ram)
+power_supplies = obj2dict(power_supplies)
+storage = obj2dict(storage)
+coolers = obj2dict(coolers)
+fans = obj2dict(fans)
